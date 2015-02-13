@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="sitewhere_title" value="Error Loading Page" />
+<c:set var="sitewhere_title" value="${rb.getString('jsp.error.errorloadingpage') }" />
 <c:set var="sitewhere_section" value="sites" />
 <%@ include file="includes/top.inc"%>
 

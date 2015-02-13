@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="sitewhere_title" value="Assignment Emulator" />
+<c:set var="sitewhere_title" value="${rb.getString('jsp.assignments.emulator.assignmentemulator') }" />
 <c:set var="sitewhere_section" value="sites" />
 <c:set var="use_map_includes" value="true" />
 <c:set var="use_mqtt" value="true" />
@@ -23,7 +23,7 @@
 	<h1 class="ellipsis"><c:out value="${sitewhere_title}"/></h1>
 	<div class="sw-title-bar-right">
 		<a id="btn-assignment-detail" class="btn" href="detail.html?token=<c:out value="${assignment.token}"/>">
-			<i class="icon-circle-arrow-left sw-button-icon"></i> Assignment Details</a>
+			<i class="icon-circle-arrow-left sw-button-icon"></i> ${rb.getString("jsp.assignments.emulator.assignmentdetails")}</a>
 	</div>
 </div>
 
@@ -33,64 +33,64 @@
 <!-- Tab panel -->
 <div id="tabs">
 	<ul>
-		<li class="k-state-active">Emulator</li>
+		<li class="k-state-active">${rb.getString("jsp.assignments.emulator.emulator")}</li>
 		<li>MQTT</li>
 	</ul>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Assignment Emulator</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.assignments.emulator.deviceassignmentemulator")}</div>
 			<div>
 				<a id="btn-refresh-locations" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh Locations</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.assignments.emulator.refreshlocations")}</a>
 				<div class="btn-group">
 					<a class="btn" href="javascript:void(0)">
-						<i class="icon-plus sw-button-icon"></i> Create</a>
+						<i class="icon-plus sw-button-icon"></i> ${rb.getString("jsp.assignments.emulator.create")}</a>
 					<button class="btn dropdown-toggle" data-toggle="dropdown">
 					<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" style="text-align: left;">
-						<li><a tabindex="-1" href="javascript:void(0)" onclick="mcOpen()">Measurements</a></li>
-						<li><a tabindex="-1" href="javascript:void(0)" onclick="acOpen()">Alert</a></li>
+						<li><a tabindex="-1" href="javascript:void(0)" onclick="mcOpen()">${rb.getString("jsp.assignments.emulator.measurements")}</a></li>
+						<li><a tabindex="-1" href="javascript:void(0)" onclick="acOpen()">${rb.getString("jsp.assignments.emulator.alert")}</a></li>
 					</ul>
 				</div>			
 				<a id="mqtt-btn-connect" class="btn btn-primary" href="javascript:void(0)">
-					<i class="icon-bolt sw-button-icon"></i> Connect</a>
+					<i class="icon-bolt sw-button-icon"></i> ${rb.getString("jsp.assignments.emulator.connect")}</a>
 			</div>
 		</div>
 		<div id="emulator-map" class="emulator-map"></div>
 	</div>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">MQTT Information</div>
+			<div class="sw-button-bar-title">MQTT ${rb.getString("jsp.assignments.emulator.information")}</div>
 			<div>
 				<a id="mqtt-btn-test-connect" class="btn" href="javascript:void(0)">
-					<i class="icon-bolt sw-button-icon"></i> Test Connection</a>
+					<i class="icon-bolt sw-button-icon"></i> ${rb.getString("jsp.assignments.emulator.testconnection")}</a>
 			</div>
 		</div>
 		<div>
 			<div id="mqtt-tabs">
 				<ul>
-					<li class="k-state-active">Settings</li>
-					<li>Last Message</li>
+					<li class="k-state-active">${rb.getString("jsp.assignments.emulator.settings")}</li>
+					<li>${rb.getString("jsp.assignments.emulator.lastmessage")}</li>
 				</ul>
 				<div>
 					<form class="form-horizontal" style="padding-top: 20px; display: inline-block; vertical-align: top">
 						<div class="control-group">
-							<label class="control-label" for="mqtt-host-name">MQTT Host Name</label>
+							<label class="control-label" for="mqtt-host-name">MQTT ${rb.getString("jsp.assignments.emulator.hostname")}</label>
 							<div class="controls">
 								<input type="text" id="mqtt-host-name" value="<%= request.getServerName() %>"
 									class="input-large" title="Host name">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="mqtt-port">MQTT Websocket Port</label>
+							<label class="control-label" for="mqtt-port">MQTT ${rb.getString("jsp.assignments.emulator.websocketport")}</label>
 							<div class="controls">
 								<input id="mqtt-port" type="number" value="61623" min="0" step="1" class="input-large"
 									title="Port" onkeyup="this.value=this.value.replace(/[^\d]/,'')"/>
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="mqtt-client-id">Client ID</label>
+							<label class="control-label" for="mqtt-client-id">${rb.getString("jsp.assignments.emulator.clientid")}</label>
 							<div class="controls">
 								<input type="text" id="mqtt-client-id" value="SiteWhereWeb"
 									class="input-large">
@@ -99,19 +99,19 @@
 					</form>
 					<form class="form-horizontal" style="padding-top: 20px; display: inline-block; vertical-align: top">
 						<div class="control-group">
-							<label class="control-label" for="mqtt-username">Username</label>
+							<label class="control-label" for="mqtt-username">${rb.getString("jsp.assignments.emulator.username")}</label>
 							<div class="controls">
 								<input type="text" id="mqtt-username" class="input-large" value="admin">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="mqtt-password">Password</label>
+							<label class="control-label" for="mqtt-password">${rb.getString("jsp.assignments.emulator.password")}</label>
 							<div class="controls">
 								<input type="password" id="mqtt-password" class="input-large" value="password">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="mqtt-topic">Topic</label>
+							<label class="control-label" for="mqtt-topic">${rb.getString("jsp.assignments.emulator.topic")}</label>
 							<div class="controls">
 								<input type="text" id="mqtt-topic" class="input-large" value="SiteWhere/input/jsonbatch">
 							</div>
@@ -121,7 +121,7 @@
 				<div>
 					<div id="mqtt-last-message">
 						<div style="padding: 25px; font-size: 14pt; text-align: center;">
-							JSON content of the MQTT payload is shown here when data is sent via the client.
+						${rb.getString("jsp.assignments.emulator.jsonmessage")}
 						</div>
 					</div>
 				</div>
@@ -134,36 +134,36 @@
 <div id="lc-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>Create Location</h3>
+		<h3>${rb.getString("jsp.assignments.emulator.createlocation")}</h3>
 	</div>
 	<div class="modal-body">
 		<div id="lc-tabs" style="clear: both;">
 			<ul>
-				<li class="k-state-active">Location</li>
-				<li>Metadata</li>
+				<li class="k-state-active">${rb.getString("jsp.assignments.emulator.location")}</li>
+				<li>${rb.getString("jsp.assignments.emulator.metadata")}</li>
 			</ul>
 			<div>
 				<form class="form-horizontal" style="padding-top: 20px">
 					<div class="control-group">
-						<label class="control-label" for="lc-lat">Latitude</label>
+						<label class="control-label" for="lc-lat">${rb.getString("jsp.assignments.emulator.latitude")}</label>
 						<div class="controls">
 							<input type="number" id="lc-lat" class="input-large">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="lc-lng">Longitude</label>
+						<label class="control-label" for="lc-lng">${rb.getString("jsp.assignments.emulator.longitude")}</label>
 						<div class="controls">
 							<input type="number" id="lc-lng" class="input-large">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="lc-elevation">Elevation</label>
+						<label class="control-label" for="lc-elevation">${rb.getString("jsp.assignments.emulator.elevation")}</label>
 						<div class="controls">
 							<input type="number" id="lc-elevation" class="input-large" value="0">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="lc-event-date">Event Date</label>
+						<label class="control-label" for="lc-event-date">${rb.getString("jsp.assignments.emulator.eventdate")}</label>
 						<div class="controls">
 							<select id="lc-date-type" class="input-xlarge" 
 								style="margin-bottom: 10px; width: 300px;"/>
@@ -182,8 +182,8 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
-		<a id="lc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">Create</a>
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString("jsp.assignments.emulator.cancel")}</a> 
+		<a id="lc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">${rb.getString("jsp.assignments.emulator.create")}</a>
 	</div>
 </div>
 
@@ -203,37 +203,37 @@
 <div id="mc-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>Create Measurements</h3>
+		<h3>${rb.getString("jsp.assignments.emulator.createmeasurements")}</h3>
 	</div>
 	<div class="modal-body">
 		<div id="mc-tabs" style="clear: both;">
 			<ul>
-				<li class="k-state-active">Measurements</li>
-				<li>Metadata</li>
+				<li class="k-state-active">${rb.getString("jsp.assignments.emulator.measurements")}</li>
+				<li>${rb.getString("jsp.assignments.emulator.metadata")}Metadata</li>
 			</ul>
 			<div>
 				<div class="sw-sublist-header">
-					<div style="width: 205px;">Name</div>
-					<div style="width: 145px">Value</div>
+					<div style="width: 205px;">${rb.getString("jsp.assignments.emulator.name")}</div>
+					<div style="width: 145px">${rb.getString("jsp.assignments.emulator.value")}</div>
 				</div>
 				<table id="mc-measurements" class="sw-sublist-list" style="height: 150px;">
 				</table>
 				<div class="sw-sublist-add-new">
 					<div class="sw-sublist-footer">
-						<div style="width: 225px; margin-left: 3px;">Name</div>
-						<div style="width: 145px">Value</div>
+						<div style="width: 225px; margin-left: 3px;">${rb.getString("jsp.assignments.emulator.name")}</div>
+						<div style="width: 145px">${rb.getString("jsp.assignments.emulator.value")}</div>
 					</div>
 					<input type="text" id="sw-mx-name" 
 						style="width: 205px; margin-bottom: 0px; margin-right: 10px;" title="Measurement name">
 					<input type="text" id="sw-mx-value" 
 						style="width: 150px; margin-bottom: 0px; margin-right: 10px;" title="Measurement value">
 					<a class="btn" href="javascript:void(0)" onclick="mcAddMeasurement()">
-						<i class="icon-plus sw-button-icon"></i> Add</a>
+						<i class="icon-plus sw-button-icon"></i> ${rb.getString("jsp.assignments.emulator.add")}</a>
 					<div id="sw-mx-error" style="color: #f00; display: none;"></div>
 				</div>	
 				<form class="form-horizontal" style="padding-top: 20px">
 					<div class="control-group">
-						<label class="control-label" for="lc-event-date">Event Date</label>
+						<label class="control-label" for="lc-event-date">${rb.getString("jsp.assignments.emulator.eventdate")}</label>
 						<div class="controls">
 							<select id="mc-date-type" class="input-xlarge" 
 								style="margin-bottom: 10px; width: 300px;"/>
@@ -252,8 +252,8 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
-		<a id="mc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">Create</a>
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString("jsp.assignments.emulator.cancel")}</a> 
+		<a id="mc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">${rb.getString("jsp.assignments.emulator.create")}</a>
 	</div>
 </div>
 
@@ -261,30 +261,30 @@
 <div id="ac-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>Create Alert</h3>
+		<h3>${rb.getString("jsp.assignments.emulator.createalert")}</h3>
 	</div>
 	<div class="modal-body">
 		<div id="ac-tabs" style="clear: both;">
 			<ul>
-				<li class="k-state-active">Alert</li>
-				<li>Metadata</li>
+				<li class="k-state-active">${rb.getString("jsp.assignments.emulator.alert")}</li>
+				<li>${rb.getString("jsp.assignments.emulator.metadata")}</li>
 			</ul>
 			<div>
 				<form class="form-horizontal" style="padding-top: 20px">
 					<div class="control-group">
-						<label class="control-label" for="ac-type">Alert Type</label>
+						<label class="control-label" for="ac-type">${rb.getString("jsp.assignments.emulator.alerttype")}</label>
 						<div class="controls">
 							<input type="text" id="ac-type" class="input-xlarge">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="ac-message">Message</label>
+						<label class="control-label" for="ac-message">${rb.getString("jsp.assignments.emulator.message")}</label>
 						<div class="controls">
 							<textarea id="ac-message" class="input-xlarge" style="height: 120px;"></textarea>
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="ac-event-date">Event Date</label>
+						<label class="control-label" for="ac-event-date">${rb.getString("jsp.assignments.emulator.eventdate")}</label>
 						<div class="controls">
 							<select id="ac-date-type" class="input-xlarge" 
 								style="margin-bottom: 10px; width: 300px;"/>
@@ -303,8 +303,8 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
-		<a id="ac-dialog-submit" href="javascript:void(0)" class="btn btn-primary">Create</a>
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString("jsp.assignments.emulator.cancel")}</a> 
+		<a id="ac-dialog-submit" href="javascript:void(0)" class="btn btn-primary">${rb.getString("jsp.assignments.emulator.create")}</a>
 	</div>
 </div>
 
@@ -411,7 +411,7 @@
 	/** Called on successful connection */
 	function onConnect() {
 		if (testingConnection) {
-			swAlert("Connected", "MQTT client connected successfully");
+			swAlert("${rb.getString('jsp.assignments.emulator.connected') }", "${rb.getString('jsp.assignments.emulator.connected.message') }");
 		}
 //		saveValues(host, port, clientId, username, password);
 		showConnectedButton();
@@ -421,8 +421,7 @@
 	
 	/** Called if connection fails */
 	function onConnectFailed() {
-		swAlert("Connect Failed", "MQTT client connection failed. Verify that MQTT settings are correct " +
-				"and the MQTT broker is running.");
+		swAlert("${rb.getString('jsp.assignments.emulator.connectfailed') }", "${rb.getString('jsp.assignments.emulator.connectfailed.message') }");
 		showConnectButton();
 		testingConnection = false;
 		connected = false;
@@ -461,7 +460,7 @@
 	
 	/** Show the connect button */
 	function showConnectButton() {
-		$('#mqtt-btn-connect').removeClass('btn-sw-success').addClass('btn-primary').html('<i class="icon-bolt sw-button-icon"></i> Connect');
+		$('#mqtt-btn-connect').removeClass('btn-sw-success').addClass('btn-primary').html('<i class="icon-bolt sw-button-icon"></i> ${rb.getString("jsp.assignments.emulator.connect")}');
 		$('#mqtt-btn-connect').click(function(event) {
 			event.preventDefault();
 			doConnect();
@@ -470,7 +469,7 @@
 	
 	/** Hide the connect button */
 	function showConnectedButton() {
-		$('#mqtt-btn-connect').removeClass('btn-primary').addClass('btn-sw-success').html('<i class="icon-check sw-button-icon"></i> Connected');
+		$('#mqtt-btn-connect').removeClass('btn-primary').addClass('btn-sw-success').html('<i class="icon-check sw-button-icon"></i> ${rb.getString("jsp.assignments.emulator.connected")}');
 		$('#mqtt-btn-connect').unbind('click');
 	}
 	
@@ -669,27 +668,27 @@
 		
 		// Check for empty.
 		if (mx.name.length == 0) {
-			error = "Name is required.";
+			error = "${rb.getString('jsp.includes.emulator.nameisrequired')}";
 		}
 		var nameRegex = /^[\w-_\.]+$/;
 		if (!nameRegex.test(mx.name)) {
-			error = "Invalid measurement in name."
+			error = "${rb.getString('jsp.includes.emulator.invalidmeasurementinname')}"
 		}
 		
 		// Check for empty.
 		if (mx.value.length == 0) {
-			error = "Value is required.";
+			error = "${rb.getString('jsp.includes.emulator.valueisrequired')}";
 		}
 		var valueRegex = /^-?\d+\.?\d*$/;
 		if (!valueRegex.test(mx.value)) {
-			error = "Invalid value."
+			error = "${rb.getString('jsp.includes.emulator.invalidvalu')}"
 		}
 		
 		// Check for already used.
 		var data = mcMeasurementsDS.data();
 		for (var index = 0, existing; existing = data[index]; index++) {
 			if (mx.name == existing.name) {
-				error = "Measurment name is already being used.";
+				error = "${rb.getString('jsp.includes.emulator.measurmentnameisalreadybeingused')}";
 				break;
 			}
 		}
@@ -774,8 +773,7 @@
 	/** Make sure client is connected and warn if not */
 	function checkConnected() {
 		if (!connected) {
-			swAlert("Not Connected", "MQTT client is not currently connected. Verify MQTT settings and click " +
-				"the <b>Connect</b> button to continue.");
+			swAlert("${rb.getString('jsp.assignments.emulator.notconnected') }", "${rb.getString('jsp.assignments.emulator.notconnected.message') } ");
 		}
 		return connected;
 	}

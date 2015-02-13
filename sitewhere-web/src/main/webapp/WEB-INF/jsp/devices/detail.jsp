@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="sitewhere_title" value="View Device" />
+<c:set var="sitewhere_title" value="${rb.getString('jsp.devices.detail.viewdevice') }" />
 <c:set var="sitewhere_section" value="devices" />
 <%@ include file="../includes/top.inc"%>
 
@@ -14,7 +14,7 @@
 	<h1 class="ellipsis"><c:out value="${sitewhere_title}"/></h1>
 	<div class="sw-title-bar-right">
 		<a id="btn-edit-device" class="btn" href="javascript:void(0)">
-			<i class="icon-pencil sw-button-icon"></i> Edit Device</a>
+			<i class="icon-pencil sw-button-icon"></i> ${rb.getString("jsp.devices.detail.editdevice")}</a>
 	</div>
 </div>
 
@@ -24,21 +24,21 @@
 <!-- Tab panel -->
 <div id="tabs">
 	<ul>
-		<li class="k-state-active">Assignment History</li>
+		<li class="k-state-active">${rb.getString("jsp.devices.detail.assignmenthistory")}</li>
 <c:choose>
 	<c:when test="${specification.containerPolicy == 'Composite'}">
-		<li>Composition</li>
+		<li>${rb.getString("jsp.devices.detail.composition")}</li>
 	</c:when>
 </c:choose>
 	</ul>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Assignment History</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.devices.detail.deviceassignmenthistory")}</div>
 			<div>
 				<a id="btn-filter-assignments" class="btn" href="javascript:void(0)">
-					<i class="icon-search sw-button-icon"></i> Filter Results</a>
+					<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.devices.detail.filterresults")}</a>
 				<a id="btn-refresh-assignments" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.devices.detail.refresh")}</a>
 			</div>
 		</div>
 		<div id="assignments" class="sw-assignment-list"></div>

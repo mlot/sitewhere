@@ -13,31 +13,31 @@
 <div id="cc-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3 id="cc-dialog-header">Create Device Command</h3>
+		<h3 id="cc-dialog-header">${rb.getString('jsp.includes.commandCreateDialog.createdevicecommand')}</h3>
 	</div>
 	<div class="modal-body">
 		<div id="cc-tabs">
 			<ul>
-				<li class="k-state-active">Command</li>
-				<li>Parameters</li>
-				<li>Metadata</li>
+				<li class="k-state-active">${rb.getString('jsp.assignments.detail.command')}</li>
+				<li>${rb.getString('jsp.includes.commandCreateDialog.parameters')}</li>
+				<li>${rb.getString('jsp.assignments.emulator.metadata')}</li>
 			</ul>
 			<div>
 				<form id="cc-general-form" class="form-horizontal" style="padding-top: 20px;">
 					<div class="control-group">
-						<label class="control-label" for="cc-name">Name</label>
+						<label class="control-label" for="cc-name">${rb.getString('jsp.assignments.emulator.name')}</label>
 						<div class="controls">
 							<input type="text" id="cc-name" class="input-xlarge" title="Name">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="cc-namespace">Namespace</label>
+						<label class="control-label" for="cc-namespace">${rb.getString('jsp.includes.commandCreateDialog.namespace')}</label>
 						<div class="controls">
 							<input type="text" id="cc-namespace" class="input-xlarge" title="Namespace">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="cc-description">Description</label>
+						<label class="control-label" for="cc-description">${rb.getString('jsp.groups.detail.description')}Description</label>
 						<div class="controls">
 							<textarea id="cc-description" class="input-xlarge" style="height: 7em;"></textarea>
 						</div>
@@ -46,17 +46,17 @@
 			</div>
 			<div>
 				<div class="sw-sublist-header">
-					<div class="sw-cc-command-params-col-name">Parameter Name</div>
-					<div class="sw-cc-command-params-col-type">Parameter Type</div>
-					<div class="sw-cc-command-params-col-req">Required</div>
+					<div class="sw-cc-command-params-col-name">${rb.getString('jsp.includes.commandCreateDialog.parametername')}</div>
+					<div class="sw-cc-command-params-col-type">${rb.getString('jsp.includes.commandCreateDialog.parametertype')}</div>
+					<div class="sw-cc-command-params-col-req">${rb.getString('jsp.includes.commandCreateDialog.required')}</div>
 				</div>
 				<table id="cc-parameters" class="sw-sublist-list">
 				</table>
 				<div class="sw-sublist-add-new">
 					<div class="sw-sublist-footer">
-						<div style="width: 205px">Parameter Name</div>
-						<div style="width: 145px">Parameter Type</div>
-						<div>Req</div>
+						<div style="width: 205px">${rb.getString('jsp.includes.commandCreateDialog.parametername')}</div>
+						<div style="width: 145px">${rb.getString('jsp.includes.commandCreateDialog.parametertype')}</div>
+						<div>${rb.getString('jsp.includes.commandCreateDialog.req')}</div>
 					</div>
 					<input type="text" id="cc-new-name" class="sw-cc-command-params-col-name" 
 						style="margin-bottom: 0px; margin-right: 10px;" title="Name">
@@ -65,7 +65,7 @@
 					<input type="checkbox" id="cc-new-required" 
 						style="margin-right: 35px;"title="Required">
 					<a class="btn" href="javascript:void(0)" onclick="onAddParameter()">
-						<i class="icon-plus sw-button-icon"></i> Add</a>
+						<i class="icon-plus sw-button-icon"></i> ${rb.getString('jsp.incloudes.metadata.add')}</a>
 					<div id="cc-new-error" style="color: #f00; display: none;"></div>
 				</div>
 			</div>
@@ -81,8 +81,8 @@
 	<input id="cc-specification-token" type="hidden" value="" />
 	<input id="cc-command-token" type="hidden" value="" />
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
-		<a id="cc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">Create</a>
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString('jsp.assignments.emulator.cancel')}</a> 
+		<a id="cc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">${rb.getString('jsp.assignments.emulator.create')}</a>
 	</div>
 </div>
 
@@ -220,7 +220,7 @@
 		}
 		var regex = /^\w+$/;
 		if (!regex.test(parameter.name)) {
-			error = "Invalid character in parameter name."
+			error = "${rb.getString('jsp.includes.commandCreateDialog.invalidcharacterinparametername')}"
 		}
 		
 		// Check for already used.
@@ -268,8 +268,8 @@
 	function ccOpen(specificationToken, callback) {
 		ccClearDialog();
 		
-		$('#cc-dialog-header').html("Create Device Command");
-		$('#cc-dialog-submit').html("Create");
+		$('#cc-dialog-header').html("${rb.getString('jsp.includes.commandCreateDialog.createdevicecommand')}");
+		$('#cc-dialog-submit').html("${rb.getString('jsp.assignments.emulator.create')}");
 		
 		paramsDS.data(new Array());
 		ccMetadataDS.data(new Array());

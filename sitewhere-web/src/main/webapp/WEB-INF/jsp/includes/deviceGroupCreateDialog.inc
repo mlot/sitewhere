@@ -2,25 +2,25 @@
 <div id="dgc-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3 id="dgc-dialog-header">Create Device Group</h3>
+		<h3 id="dgc-dialog-header">${rb.getString('jsp.includes.deviceGroupCreateDialog.createdevicegroup')}</h3>
 	</div>
 	<div class="modal-body">
 		<div id="dgc-tabs">
 			<ul>
-				<li class="k-state-active">Group Details</li>
-				<li>Roles</li>
-				<li>Metadata</li>
+				<li class="k-state-active">${rb.getString('jsp.includes.deviceGroupCreateDialog.groupdetails')}</li>
+				<li>${rb.getString('jsp.groups.detail.roles')}</li>
+				<li>${rb.getString('jsp.assignments.emulator.metadata')}</li>
 			</ul>
 			<div>
 				<form id="dgc-general-form" class="form-horizontal" style="padding-top: 20px;">
 					<div class="control-group">
-						<label class="control-label" for="dgc-name">Group Name</label>
+						<label class="control-label" for="dgc-name">${rb.getString('jsp.includes.deviceGroupCreateDialog.groupname')}</label>
 						<div class="controls">
 							<input type="text" id="dgc-name" title="Name" class="input-xlarge">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="dgc-description">Description</label>
+						<label class="control-label" for="dgc-description">${rb.getString('jsp.groups.detail.description')}</label>
 						<div class="controls">
 							<textarea id="dgc-description" class="input-xlarge" style="height: 10em;"></textarea>
 						</div>
@@ -29,13 +29,13 @@
 				</form>
 			</div>
 			<div>
-				<div class="sw-sublist-header">Role</div>
+				<div class="sw-sublist-header">${rb.getString('jsp.includes.deviceGroupCreateDialog.role')}</div>
 				<table id="dgc-roles" class="sw-sublist-list" style="height: 190px;"></table>
 				<div style="position: relative;" class="sw-sublist-add-new">
 					<input type="text" id="dgc-add-role-value" 
 						style="width: 82%; margin-bottom: 0px;" title="New Role Value">
 					<a style="float: right;" class="btn" href="javascript:void(0)" onclick="dgcAddRole()">
-						<i class="icon-plus sw-button-icon"></i> Add</a>
+						<i class="icon-plus sw-button-icon"></i> ${rb.getString('jsp.incloudes.metadata.add')}</a>
 					<div id="dgc-role-create-error" style="color: #f00; display: none;"></div>
 				</div>
     		</div>
@@ -49,8 +49,8 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
-		<a id="dgc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">Create</a>
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString('jsp.assignments.emulator.cancel')}</a> 
+		<a id="dgc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">${rb.getString('jsp.assignments.emulator.create')}</a>
 	</div>
 </div>
 
@@ -149,7 +149,7 @@
 		var event = e || window.event;
 		event.stopPropagation();
 		
-		$('#dgc-dialog-header').html("Create Device Group");
+		$('#dgc-dialog-header').html("${rb.getString('jsp.includes.deviceGroupCreateDialog.createdevicegroup')}");
 		$('#dgc-dialog-submit').html("Create");
 		
 		// Clear hidden fields.
@@ -185,8 +185,8 @@
     
     /** Called on successful user load request */
     function dguGetSuccess(data, status, jqXHR) {
-		$('#dgc-dialog-header').html("Edit Device Group");
-		$('#dgc-dialog-submit').html("Save");
+		$('#dgc-dialog-header').html("${rb.getString('jsp.includes.deviceGroupCreateDialog.editdevicegroup')}");
+		$('#dgc-dialog-submit').html("${rb.getString('jsp.includes.siteCreateDialog.save')}");
 		
 		// Load hidden fields.
 		$('#dgc-group-token').val(data.token);

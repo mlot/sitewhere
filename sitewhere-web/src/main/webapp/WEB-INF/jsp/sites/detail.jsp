@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="sitewhere_title" value="View Site" />
+<c:set var="sitewhere_title" value="${rb.getString('jsp.sites.detail.viewsite')}" />
 <c:set var="sitewhere_section" value="sites" />
 <c:set var="use_map_includes" value="true" />
 <c:set var="use_color_picker_includes" value="true" />
@@ -20,7 +20,7 @@
 	<h1 class="ellipsis"><c:out value="${sitewhere_title}"/></h1>
 	<div class="sw-title-bar-right">
 		<a id="btn-edit-site" class="btn" href="javascript:void(0)">
-			<i class="icon-edit sw-button-icon"></i> Edit Site</a>
+			<i class="icon-edit sw-button-icon"></i> ${rb.getString("jsp.sites.detail.editsite")} </a>
 	</div>
 </div>
 
@@ -30,20 +30,20 @@
 <!-- Tab panel -->
 <div id="tabs">
 	<ul>
-		<li class="k-state-active">Assignments</li>
-		<li>Locations</li>
-		<li>Measurements</li>
-		<li>Alerts</li>
-		<li>Zones</li>
+		<li class="k-state-active">${rb.getString("jsp.sites.detail.assignments")}</li>
+		<li>${rb.getString("jsp.sites.detail.locations")}</li>
+		<li>${rb.getString("jsp.sites.detail.measurements")}</li>
+		<li>${rb.getString("jsp.sites.detail.alerts")}</li>
+		<li>${rb.getString("jsp.sites.detail.zones")}</li>
 	</ul>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Assignments</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.sites.detail.deviceassignments")}</div>
 			<div>
 				<a id="btn-filter-assignments" class="btn" href="javascript:void(0)">
-					<i class="icon-search sw-button-icon"></i> Filter Results</a>
+					<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.sites.detail.filterresults")}</a>
 				<a id="btn-refresh-assignments" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.sites.detail.refresh")}</a>
 			</div>
 		</div>
 		<div id="assignments" class="sw-assignment-list"></div>
@@ -51,12 +51,12 @@
 	</div>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Locations</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.sites.detail.devicelocations")}</div>
 			<div>
 				<a id="btn-filter-locations" class="btn" href="javascript:void(0)">
-					<i class="icon-search sw-button-icon"></i> Filter Results</a>
+					<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.sites.detail.filterresults")}</a>
 				<a id="btn-refresh-locations" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.sites.detail.refresh")}</a>
 			</div>
 		</div>
 		<table id="locations">
@@ -68,10 +68,10 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th>Asset</th>
-					<th>Location (Lat/Long/Elevation)</th>
-					<th>Event Date</th>
-					<th>Received Date</th>
+					<th>${rb.getString("jsp.sites.detail.asset")}</th>
+					<th>${rb.getString("jsp.sites.detail.location")} (Lat/Long/Elevation)</th>
+					<th>${rb.getString("jsp.sites.detail.eventdate")}</th>
+					<th>${rb.getString("jsp.sites.detail.receiveddate")}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -82,12 +82,12 @@
 	</div>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Measurements</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.sites.detail.devicemeasurements")}</div>
 			<div>
 				<a id="btn-filter-measurements" class="btn" href="javascript:void(0)">
-					<i class="icon-search sw-button-icon"></i> Filter Results</a>
+					<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.sites.detail.filterresults")}</a>
 				<a id="btn-refresh-measurements" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.sites.detail.refresh")}</a>
 			</div>
 		</div>
 		<table id="measurements">
@@ -99,10 +99,10 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th>Asset</th>
-					<th>Measurements</th>
-					<th>Event Date</th>
-					<th>Received Date</th>
+					<th>${rb.getString("jsp.sites.detail.asset")}</th>
+					<th>${rb.getString("jsp.sites.detail.measurements")}</th>
+					<th>${rb.getString("jsp.sites.detail.eventdate")}</th>
+					<th>${rb.getString("jsp.sites.detail.receiveddate")}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -113,12 +113,12 @@
 	</div>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Alerts</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.sites.detail.devicealerts")}</div>
 			<div>
 				<a id="btn-filter-alerts" class="btn" href="javascript:void(0)">
-					<i class="icon-search sw-button-icon"></i> Filter Results</a>
+					<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.sites.detail.filterresults")}</a>
 				<a id="btn-refresh-alerts" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.sites.detail.refresh")}</a>
 			</div>
 		</div>
 		<table id="alerts">
@@ -132,12 +132,12 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th>Asset</th>
-					<th>Type</th>
-					<th>Message</th>
-					<th>Source</th>
-					<th>Event Date</th>
-					<th>Received Date</th>
+					<th>${rb.getString("jsp.sites.detail.asset")}</th>
+					<th>${rb.getString("jsp.sites.detail.type")}</th>
+					<th>${rb.getString("jsp.sites.detail.message")}</th>
+					<th>${rb.getString("jsp.sites.detail.source")}</th>
+					<th>${rb.getString("jsp.sites.detail.eventdate")}</th>
+					<th>${rb.getString("jsp.sites.detail.receiveddate")}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -148,12 +148,12 @@
 	</div>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Zones</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.sites.detail.zones")}</div>
 			<div>
 				<a id="btn-refresh-zones" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.sites.detail.refresh")}</a>
 				<a id="btn-add-zone" class="btn" href="javascript:void(0)">
-					<i class="icon-plus sw-button-icon"></i> Add New Zone</a>
+					<i class="icon-plus sw-button-icon"></i> ${rb.getString("jsp.sites.detail.addnewzone")}</a>
 			</div>
 		</div>
 		<table id="zones">
@@ -168,10 +168,10 @@
 			<thead>
 				<tr>
 					<th></th>
-					<th>Name</th>
-					<th>Token</th>
-					<th>Created Date</th>
-					<th>Updated Date</th>
+					<th>${rb.getString("jsp.sites.detail.name")}</th>
+					<th>${rb.getString("jsp.sites.detail.token")}</th>
+					<th>${rb.getString("jsp.sites.detail.createddate")}</th>
+					<th>${rb.getString("jsp.sites.detail.updateddate")}</th>
 					<th></th>
 				</tr>
 			</thead>

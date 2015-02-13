@@ -10,32 +10,32 @@
 <div id="sc-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3 id="sc-dialog-header">Create Site</h3>
+		<h3 id="sc-dialog-header">${rb.getString("jsp.incloudes.siteCreateDialog.createsite")}</h3>
 	</div>
 	<div class="modal-body">
 		<div id="sc-tabs">
 			<ul>
-				<li class="k-state-active">Site Details</li>
-				<li>Map Information</li>
-				<li>Metadata</li>
+				<li class="k-state-active">${rb.getString("jsp.incloudes.siteCreateDialog.sitedetails")}</li>
+				<li>${rb.getString("jsp.incloudes.siteCreateDialog.mapinformation")}</li>
+				<li>${rb.getString("jsp.incloudes.siteCreateDialog.metadata")}</li>
 			</ul>
 			<div>
 				<form id="general-form" class="form-horizontal" style="padding-top: 20px;">
 					<div class="control-group">
-						<label class="control-label" for="gen-site-name">Site Name</label>
+						<label class="control-label" for="gen-site-name">${rb.getString("jsp.incloudes.siteCreateDialog.sitename")}</label>
 						<div class="controls">
 							<input type="text" id="gen-site-name" class="input-xlarge" title="Site name">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="gen-site-desc">Site
-							Description</label>
+						<label class="control-label" for="gen-site-desc">
+						${rb.getString("jsp.incloudes.siteCreateDialog.sitedescription")}</label>
 						<div class="controls">
 							<textarea id="gen-site-desc" name="siteDesc" class="input-xlarge" style="height: 120px;"></textarea>
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="gen-site-image-url">Image URL</label>
+						<label class="control-label" for="gen-site-image-url">${rb.getString("jsp.incloudes.siteCreateDialog.imageurl")}</label>
 						<div class="controls">
 							<input type="text" id="gen-site-image-url" name="siteImageUrl" class="input-xlarge">
 						</div>
@@ -45,7 +45,7 @@
 			<div>
 				<form class="form-horizontal" style="padding-top: 15px;">
 					<div class="control-group" style="border-bottom: 1px solid #eeeeee; padding-bottom: 10px;">
-						<label class="control-label" for="sc-map-type">Map Type</label>
+						<label class="control-label" for="sc-map-type">${rb.getString("jsp.incloudes.siteCreateDialog.maptype")}</label>
 						<div class="controls">
 							<input id="sc-map-type"/>
 						</div>
@@ -54,19 +54,19 @@
 				<div id="map-type-forms">
 					<form id="mapquest" class="form-horizontal">
 						<div class="control-group">
-							<label class="control-label" for="mq-center-latitude">Center Latitude</label>
+							<label class="control-label" for="mq-center-latitude">${rb.getString("jsp.incloudes.siteCreateDialog.centerlatitude")}</label>
 							<div class="controls">
 								<input type="text" id="mq-center-latitude" class="input-large">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="mq-center-longitude">Center Longitude</label>
+							<label class="control-label" for="mq-center-longitude">${rb.getString("jsp.incloudes.siteCreateDialog.centerlongitude")}</label>
 							<div class="controls">
 								<input type="text" id="mq-center-longitude" class="input-large">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="mq-zoom-level">Zoom Level</label>
+							<label class="control-label" for="mq-zoom-level">${rb.getString("jsp.incloudes.siteCreateDialog.zoomlevel")}</label>
 							<div class="controls">
 								<input type="text" id="mq-zoom-level" class="input-large">
 							</div>
@@ -75,7 +75,7 @@
 							<label class="control-label"></label>
 							<div class="controls">
 								<a href="javascript:void(0)" onclick="scShowMap()">
-									Choose location and zoom on map
+								    ${rb.getString("jsp.incloudes.siteCreateDialog.choosezoommapmassage")}
 								</a>
 							</div>
 						</div>
@@ -94,19 +94,19 @@
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="gs-center-latitude">Center Latitude</label>
+							<label class="control-label" for="gs-center-latitude">${rb.getString("jsp.incloudes.siteCreateDialog.centerlatitude")}</label>
 							<div class="controls">
 								<input type="text" id="gs-center-latitude" class="input-large">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="gs-center-longitude">Center Longitude</label>
+							<label class="control-label" for="gs-center-longitude">${rb.getString("jsp.incloudes.siteCreateDialog.centerlongitude")}</label>
 							<div class="controls">
 								<input type="text" id="gs-center-longitude" class="input-large">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="gs-zoom-level">Zoom Level</label>
+							<label class="control-label" for="gs-zoom-level">${rb.getString("jsp.incloudes.siteCreateDialog.zoomlevel")}</label>
 							<div class="controls">
 								<input type="text" id="gs-zoom-level" class="input-large">
 							</div>
@@ -115,7 +115,7 @@
 							<label class="control-label"></label>
 							<div class="controls">
 								<a href="javascript:void(0)" onclick="scShowMap()">
-									Choose location and zoom on map
+								    ${rb.getString("jsp.incloudes.siteCreateDialog.choosezoommapmassage")}
 								</a>
 							</div>
 						</div>
@@ -137,12 +137,12 @@
 	<input id="site-token" type="hidden" value="" />
 	<div class="modal-footer">
 		<div id="sc-buttons">
-			<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
-			<a id="sc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">Create</a>
+			<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString("jsp.incloudes.siteCreateDialog.cancel")}</a> 
+			<a id="sc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">${rb.getString("jsp.incloudes.siteCreateDialog.create")}</a>
 		</div>
 		<div id="sc-map-buttons" class="hide">
-			<a href="javascript:void(0)" class="btn" onclick="scHideMap(false)">Cancel</a> 
-			<a href="javascript:void(0)" class="btn btn-primary" onclick="scHideMap(true)">Use These Settings</a>
+			<a href="javascript:void(0)" class="btn" onclick="scHideMap(false)">${rb.getString("jsp.incloudes.siteCreateDialog.cancel")}</a> 
+			<a href="javascript:void(0)" class="btn btn-primary" onclick="scHideMap(true)">${rb.getString("jsp.incloudes.siteCreateDialog.usethesesettings")}</a>
 		</div>
 	</div>
 </div>
@@ -258,8 +258,8 @@
 	/** Open the site create dialog */
 	function scOpen(e, callback) {
 		scClearDialog();
-		$('#sc-dialog-header').html("Create Site");
-		$('#sc-dialog-submit').html("Create");
+		$('#sc-dialog-header').html("${rb.getString("jsp.incloudes.siteCreateDialog.createsite")}");
+		$('#sc-dialog-submit').html("${rb.getString("jsp.incloudes.siteCreateDialog.create")}");
 		$('#site-token').val("");
 		scMetadataDS.data(new Array());
 		scTabs.select(0);
@@ -313,8 +313,8 @@
     /** Called on successful site load request */
     function suSiteGetSuccess(data, status, jqXHR) {
 		scClearDialog();
-		$('#sc-dialog-header').html("Edit Site");
-		$('#sc-dialog-submit').html("Save");
+		$('#sc-dialog-header').html("${rb.getString('jsp.includes.siteCreateDialog.editsite')}");
+		$('#sc-dialog-submit').html("${rb.getString('jsp.includes.siteCreateDialog.save')}");
 		$('#gen-site-name').val(data.name);
 		$('#gen-site-desc').val(data.description);
 		$('#gen-site-image-url').val(data.imageUrl);

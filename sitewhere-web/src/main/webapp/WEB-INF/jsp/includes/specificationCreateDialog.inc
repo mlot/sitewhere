@@ -2,36 +2,36 @@
 <div id="spc-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3 id="spc-dialog-header">Create Specification</h3>
+		<h3 id="spc-dialog-header">${rb.getString('jsp.incloudes.specificationCreateDialog.createspecification')}</h3>
 	</div>
 	<div class="modal-body">
 		<div id="spc-tabs">
 			<ul>
-				<li class="k-state-active">Specification Details</li>
-				<li>Metadata</li>
+				<li class="k-state-active">${rb.getString('jsp.incloudes.specificationCreateDialog.specificationdetails')}</li>
+				<li>${rb.getString('jsp.assignments.emulator.metadata')}</li>
 			</ul>
 			<div>
 				<form id="spc-general-form" class="form-horizontal form-search" style="padding-top: 20px;">
 					<div class="control-group">
-						<label class="control-label" for="spc-name">Name</label>
+						<label class="control-label" for="spc-name">${rb.getString('jsp.sites.detail.name')}</label>
 						<div class="controls">
 							<input type="text" id="spc-name" title="Specification Name" class="input-xlarge">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="spc-container-policy">Type</label>
+						<label class="control-label" for="spc-container-policy">${rb.getString('jsp.sites.detail.type')}</label>
 						<div class="controls">
 							<select id="spc-container-policy" class="input-xlarge"/></select>
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="spc-asset-module">Asset Provider</label>
+						<label class="control-label" for="spc-asset-module">${rb.getString('jsp.incloudes.specificationCreateDialog.assetprovider')}</label>
 						<div class="controls">
 							<select id="spc-asset-module" class="input-xlarge"/></select>
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="spc-hardware-search">Choose Device Type</label>
+						<label class="control-label" for="spc-hardware-search">${rb.getString('jsp.incloudes.specificationCreateDialog.choosedevicetype')}</label>
 						<div class="controls">
 							<div class="input-append">
 	    						<input class="input-xlarge" id="spc-hardware-search" type="text">
@@ -54,7 +54,7 @@
 	</div>
 	<input id="spec-token" type="hidden" value="" />
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString('jsp.assignments.emulator.cancel')}</a> 
 		<a id="spc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">Create</a>
 	</div>
 </div>
@@ -268,8 +268,8 @@
 		// Reset form and metadata.
     	$('#spc-general-form')[0].reset();
 		spcMetadataDS.data(new Array());
-		$('#spc-dialog-header').html("Create Specification");
-		$('#spc-dialog-submit').html("Create");
+		$('#spc-dialog-header').html("${rb.getString('jsp.incloudes.specificationCreateDialog.createspecification')}");
+		$('#spc-dialog-submit').html("${rb.getString('jsp.assignments.emulator.create')}");
 		
 		// Reset hardware search.
     	$('#spc-hardware-search').val("");
@@ -302,8 +302,8 @@
 	
 	/** Open the dialog */
 	function spuSpecificationGetSuccess(data, status, jqXHR) {
-		$('#spc-dialog-header').html("Edit Specification");
-		$('#spc-dialog-submit').html("Save");
+		$('#spc-dialog-header').html("${rb.getString('jsp.incloudes.specificationCreateDialog.editspecification')}");
+		$('#spc-dialog-submit').html("${rb.getString('jsp.includes.siteCreateDialog.save')}");
 		
 		// Save token for update.
 		$('#spec-token').val(data.token);

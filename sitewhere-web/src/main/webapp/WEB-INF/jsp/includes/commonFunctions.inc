@@ -5,7 +5,7 @@
 	/** Delete a specification based on its token */
 	function swSpecificationDelete(token, successCallback) {
 		swSuccessCallback = successCallback;
-		swConfirm("Delete Specification", "Are you sure that you want to delete device specification with " +
+		swConfirm("${rb.getString('jsp.includes.commonFunctions.deletespecification')}", "${rb.getString('jsp.includes.commonFunctions.delmessage')} " +
 			"token '" + token + "'?", function(result) {
 			if (result) {
 				$.deleteJSON("${pageContext.request.contextPath}/api/specifications/"
@@ -29,7 +29,7 @@
 	/** Delete a device based on its hardware id */
 	function swDeviceDelete(hardwareId, successCallback) {
 		swSuccessCallback = successCallback;
-		swConfirm("Delete Device", "Are you sure that you want to delete device with hardware id '" + hardwareId + 
+		swConfirm("${rb.getString('jsp.includes.commonFunctions.deletedevice')}", "${rb.getString('jsp.includes.commonFunctions.deletedevice.message')} '" + hardwareId + 
 			"'?", function(result) {
 			if (result) {
 				$.deleteJSON("${pageContext.request.contextPath}/api/devices/"
@@ -53,7 +53,7 @@
 	/** Delete a device assignment based on its token */
 	function swAssignmentDelete(token, successCallback) {
 		swSuccessCallback = successCallback;
-		swConfirm("Delete Assignment", "Are you sure you want to delete this device assignment?", function(result) {
+		swConfirm("${rb.getString('jsp.includes.commonFunctions.deleteassignment')}", "${rb.getString('jsp.includes.commonFunctions.deleteassignment.message')} ", function(result) {
 			if (result) {
 				$.deleteJSON("${pageContext.request.contextPath}/api/assignments/"
 					+ token + "?force=true", swAssignmentDeleteSuccess, swAssignmentDeleteFail);
@@ -145,7 +145,7 @@
 	/** Delete a device group based on its token */
 	function swDeviceGroupDelete(token, successCallback) {
 		swSuccessCallback = successCallback;
-		swConfirm("Delete Device Group", "Are you sure that you want to delete device group with token '" + token + 
+		swConfirm("${rb.getString('jsp.includes.commonFunctions.deletedevicegroup')}", "${rb.getString('jsp.includes.commonFunctions.deletedevicegroup.message')} '" + token + 
 			"'?", function(result) {
 			if (result) {
 				$.deleteJSON("${pageContext.request.contextPath}/api/devicegroups/"

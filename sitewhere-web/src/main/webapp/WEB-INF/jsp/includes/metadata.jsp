@@ -23,18 +23,18 @@
 		
 		// Check for empty.
 		if (metadata.name.length == 0) {
-			error = "Name is required.";
+			error = "${rb.getString('jsp.incloudes.metadata.nameisrequired') }";
 		}
 		var regex = /^[\w-]+$/;
 		if (!regex.test(metadata.name)) {
-			error = "Invalid character in name."
+			error = "${rb.getString('jsp.incloudes.metadata.invalidcharacterinname') }."
 		}
 		
 		// Check for already used.
 		var data = <%= request.getParameter("uid")%>MetadataDS.data();
 		for (var index = 0, existing; existing = data[index]; index++) {
 			if (metadata.name == existing.name) {
-				error = "Name is already being used.";
+				error = "${rb.getString('jsp.incloudes.metadata.nameisalreadybeingused') }.";
 				break;
 			}
 		}
@@ -91,7 +91,7 @@
 	<input type="text" id="sw-metadata-value-<%= request.getParameter("uid")%>" 
 		style="width: 150px; margin-bottom: 0px; margin-right: 10px;" title="Metadata value">
 	<a class="btn" href="javascript:void(0)" onclick="onAddMetadata_<%= request.getParameter("uid")%>()">
-		<i class="icon-plus sw-button-icon"></i> Add</a>
+		<i class="icon-plus sw-button-icon"></i> ${rb.getString("jsp.incloudes.metadata.add") }</a>
 	<div id="sw-metadata-error-<%= request.getParameter("uid")%>" style="color: #f00; display: none;"></div>
 </div>	
 <% } %>

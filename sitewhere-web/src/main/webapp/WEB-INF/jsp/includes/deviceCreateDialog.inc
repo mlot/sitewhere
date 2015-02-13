@@ -2,25 +2,25 @@
 <div id="dc-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>Create Device</h3>
+		<h3>${rb.getString('jsp.includes.deviceCreateDialog.createdevice') }</h3>
 	</div>
 	<div class="modal-body">
 		<div id="dc-tabs">
 			<ul>
-				<li class="k-state-active">Device Details</li>
-				<li>Specification</li>
-				<li>Metadata</li>
+				<li class="k-state-active">${rb.getString('jsp.includes.deviceCreateDialog.devicedetails') }</li>
+				<li>${rb.getString('jsp.includes.deviceCreateDialog.specification') }</li>
+				<li>${rb.getString('jsp.assignments.emulator.metadata') }</li>
 			</ul>
 			<div>
 				<form id="dc-general-form" class="form-horizontal" style="padding-top: 20px;">
 					<div class="control-group">
-						<label class="control-label" for="dc-hardware-id">Hardware Id</label>
+						<label class="control-label" for="dc-hardware-id">${rb.getString('jsp.includes.deviceCreateDialog.hardwareid') }</label>
 						<div class="controls">
 							<input type="text" id="dc-hardware-id" title="Hardware id" class="input-xlarge">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="dc-comments">Comments</label>
+						<label class="control-label" for="dc-comments">${rb.getString('jsp.includes.deviceCreateDialog.comments') }</label>
 						<div class="controls">
 							<textarea id="dc-comments" class="input-xlarge" style="height: 10em;"></textarea>
 						</div>
@@ -30,7 +30,7 @@
 			<div>
 				<form id="dc-specification-form" class="form-horizontal form-search" style="padding-top: 20px;">
 					<div class="control-group">
-						<label class="control-label" for="dc-specification-search">Choose Specification</label>
+						<label class="control-label" for="dc-specification-search">${rb.getString('jsp.assignments.emulator.choosespecification') }</label>
 						<div class="controls">
 							<div id="dc-specifications" class="sw-form-search-results"></div>
 							<input type="hidden" id="dc-chosen-specification-token" title="Specification"/>
@@ -48,8 +48,8 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
-		<a id="dc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">Create</a>
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString('jsp.assignments.emulator.cancel') }</a> 
+		<a id="dc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">${rb.getString('jsp.assignments.emulator.create') }</a>
 	</div>
 </div>
 

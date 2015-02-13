@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="sitewhere_title" value="View Device Group" />
+<c:set var="sitewhere_title" value="${rb.getString('jsp.groups.detail.viewdevicegroup') }" />
 <c:set var="sitewhere_section" value="devicegroups" />
 <%@ include file="../includes/top.inc"%>
 
@@ -14,7 +14,7 @@
 	<h1 class="ellipsis"><c:out value="${sitewhere_title}"/></h1>
 	<div class="sw-title-bar-right">
 		<a id="btn-edit-device-group" class="btn" href="javascript:void(0)">
-			<i class="icon-pencil sw-button-icon"></i> Edit Device Group</a>
+			<i class="icon-pencil sw-button-icon"></i> ${rb.getString("jsp.groups.detail.editdevicegroup")}</a>
 	</div>
 </div>
 
@@ -24,18 +24,18 @@
 <!-- Tab panel -->
 <div id="tabs">
 	<ul>
-		<li class="k-state-active">Group Elements</li>
+		<li class="k-state-active">${rb.getString("jsp.groups.detail.groupelements")}</li>
 	</ul>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Group Elements</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.groups.detail.devicegroupelements")}</div>
 			<div>
 				<a id="btn-filter-elements" class="btn" href="javascript:void(0)">
-					<i class="icon-search sw-button-icon"></i> Filter Results</a>
+					<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.groups.detail.filterresults")}</a>
 				<a id="btn-refresh-elements" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.groups.detail.refresh")}</a>
 				<a id="btn-add-element" class="btn" href="javascript:void(0)">
-					<i class="icon-plus sw-button-icon"></i> Add Group Element</a>
+					<i class="icon-plus sw-button-icon"></i> ${rb.getString("jsp.groups.detail.addgroupelement")}</a>
 			</div>
 		</div>
 		<table id="elements">
@@ -47,9 +47,9 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th>Element</th>
-					<th>Description</th>
-					<th>Roles</th>
+					<th>${rb.getString("jsp.groups.detail.element")}</th>
+					<th>${rb.getString("jsp.groups.detail.description")}</th>
+					<th>${rb.getString("jsp.groups.detail.roles")}</th>
 					<th></th>
 				</tr>
 			</thead>

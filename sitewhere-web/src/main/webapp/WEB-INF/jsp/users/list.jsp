@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="sitewhere_title" value="Manage Users" />
+<c:set var="sitewhere_title" value="${rb.getString('jsp.users.list.manageusers') }" />
 <c:set var="sitewhere_section" value="users" />
 <%@ include file="../includes/top.inc"%>
 
@@ -11,9 +11,9 @@
 	<h1 class="ellipsis"><c:out value="${sitewhere_title}"/></h1>
 	<div class="sw-title-bar-right">
 		<a id="btn-filter-results" class="btn" href="javascript:void(0)">
-			<i class="icon-search sw-button-icon"></i> Filter Results</a>
+			<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.users.list.filterresults")} </a>
 		<a id="btn-add-user" class="btn" href="javascript:void(0)">
-			<i class="icon-plus sw-button-icon"></i> Add New User</a>
+			<i class="icon-plus sw-button-icon"></i> ${rb.getString("jsp.users.list.addnewuser")} </a>
 	</div>
 </div>
 <table id="users">
@@ -29,13 +29,13 @@
 	</colgroup>
 	<thead>
 		<tr>
-			<th>Username</th>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Status</th>
-			<th>Last Login</th>
-			<th>Created</th>
-			<th>Updated</th>
+			<th>${rb.getString("jsp.users.list.username")}</th>
+			<th>${rb.getString("jsp.users.list.firstname")}</th>
+			<th>${rb.getString("jsp.users.list.lastname")}</th>
+			<th>${rb.getString("jsp.users.list.status")}</th>
+			<th>${rb.getString("jsp.users.list.lastlogin")}</th>
+			<th>${rb.getString("jsp.users.list.created")}</th>
+			<th>${rb.getString("jsp.users.list.updated")}</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -76,7 +76,7 @@
 	function onDeleteUser(e, username) {
 		var event = e || window.event;
 		event.stopPropagation();
-		swConfirm("Delete User", "Are you sure you want to delete this user?", function(result) {
+		swConfirm("${rb.getString('jsp.users.list.deleteuser')}", "${rb.getString('jsp.users.list.deleteuser.message')}?", function(result) {
 			if (result) {
 				$.deleteJSON("${pageContext.request.contextPath}/api/users/" + username + "?force=true", 
 						onDeleteSuccess, onDeleteFail);

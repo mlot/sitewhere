@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="sitewhere_title" value="Server Startup Failed" />
+<c:set var="sitewhere_title" value="${rb.getString('jsp.noserver.serverstartupfailed') }" />
 <c:set var="sitewhere_section" value="sites" />
 <%@ include file="includes/top.inc"%>
 
@@ -13,6 +13,6 @@
 	</h1>
 </div>
 <div class="alert alert-error">
-	SiteWhere did not start successfully. Check error logs for more information.
+	${rb.getString("jsp.noserver.loaderrorms")}
 </div>
 <%@ include file="includes/bottom.inc"%>

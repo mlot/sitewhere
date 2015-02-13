@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="sitewhere_title" value="Manage Sites" />
+<c:set var="sitewhere_title" value="${rb.getString('jsp.sites.list.managesites')}" />
 <c:set var="sitewhere_section" value="sites" />
 <c:set var="use_map_includes" value="true" />
 <%@ include file="../includes/top.inc"%>
@@ -26,9 +26,9 @@
 	<h1 class="ellipsis"><c:out value="${sitewhere_title}"/></h1>
 	<div class="sw-title-bar-right">
 		<a id="btn-filter-results" class="btn" href="javascript:void(0)">
-			<i class="icon-search sw-button-icon"></i> Filter Results</a>
+			<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.sites.list.filterresults")} </a>
 		<a id="btn-add-site" class="btn" href="javascript:void(0)">
-			<i class="icon-plus sw-button-icon"></i> Add New Site</a>
+			<i class="icon-plus sw-button-icon"></i> ${rb.getString("jsp.sites.list.addnewsite")}</a>
 	</div>
 </div>
 <div id="sites" class="sw-site-list"></div>
@@ -60,7 +60,7 @@
 	function onSiteDeleteClicked(e, siteToken) {
 		var event = e || window.event;
 		event.stopPropagation();
-		swConfirm("Delete Site", "Are you sure you want to delete this site?", function(result) {
+		swConfirm("${rb.getString('jsp.sites.list.deletesite')}", "${rb.getString('jsp.sites.list.areyousuredeletesite')}?", function(result) {
 			if (result) {
 				$.deleteJSON("${pageContext.request.contextPath}/api/sites/" + siteToken + "?force=true", 
 						onDeleteSuccess, onDeleteFail);
@@ -75,7 +75,7 @@
     
 	/** Handle failed delete call */
 	function onDeleteFail(jqXHR, textStatus, errorThrown) {
-		handleError(jqXHR, "Unable to delete site.");
+		handleError(jqXHR, "${'jsp.sites.list.unabletodeletesite'}");
 	}
 	
 	/** Called when open button is clicked */
