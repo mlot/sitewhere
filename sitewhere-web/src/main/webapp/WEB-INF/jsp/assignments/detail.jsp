@@ -1,9 +1,29 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html class="sw-body">
+<head>
+	<script src="${pageContext.request.contextPath}/scripts/jquery-1.10.2.min.js"></script>
+	<script src="${pageContext.request.contextPath}/charts/media/js/flyjsonp.js"></script>
+	<script src="${pageContext.request.contextPath}/charts/media/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/charts/media/js/jquery.flot.js"></script>
+	<script type="text/javascript"
+			src="${pageContext.request.contextPath}/charts/media/js/jquery.flot.time.js"></script>
+
+	<script type="text/javascript" src="${pageContext.request.contextPath}/charts/media/js/json2.js"></script>
+	<link href="${pageContext.request.contextPath}/charts/media/css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
 <c:set var="sitewhere_title" value="View Assignment" />
 <c:set var="sitewhere_section" value="sites" />
+
 <%@ include file="../includes/top.inc"%>
 
 <style>
+	.chart {
+		overflow: hidden;
+		height: 300px;
+	}
 .event-pager {
 	margin-top: 10px;
 }
@@ -30,6 +50,10 @@
 		<li>Measurements</li>
 		<li>Alerts</li>
 		<li>Command Invocations</li>
+		<li>CPU Charts</li>
+		<li>Memory Charts</li>
+
+
 	</ul>
 	<div>
 		<div class="k-header sw-button-bar">
@@ -155,6 +179,18 @@
 		</table>
 		<div id="invocations-pager" class="k-pager-wrap event-pager"></div>
 	</div>
+
+
+	<div style="padding:30px 0 ">
+		<div id="charts_1" style="width:900px;height:500px;margin:0 auto"></div>
+
+	</div>
+	<div style="padding:30px 0 ">
+		<div id="memory_1" style="width:900px;height:500px;margin:0 auto"></div>
+
+	</div>
+
+
 </div>
 
 <%@ include file="../includes/assignmentUpdateDialog.inc"%>
@@ -167,8 +203,8 @@
 <%@ include file="../includes/templateLocationEntry.inc"%>
 <%@ include file="../includes/templateMeasurementsEntry.inc"%>
 <%@ include file="../includes/templateAlertEntry.inc"%>
-<%@ include file="../includes/commonFunctions.inc"%>
 
+<%@ include file="../includes/commonFunctions.inc" %>
 <script>
 	/** Assignment token */
 	var token = '<c:out value="${assignment.token}"/>';
@@ -181,7 +217,7 @@
 	
 	/** Datasource for locations */
 	var locationsDS;
-	
+	/**
 	/** Datasource for measurements */
 	var measurementsDS;
 	
@@ -292,7 +328,8 @@
             serverSorting: true,
             pageSize: pageSize,
 		});
-		
+
+
 		/** Create the measurements list */
         $("#measurements").kendoGrid({
 			dataSource : measurementsDS,
@@ -309,7 +346,227 @@
 	    	measurementsDS.read();
 	    });
 	    $('#btn-filter-measurements').attr('disabled', true);
-	    
+		/** Create charts_1 */
+
+		var cpu = [];
+		var dataset;
+		var totalPoints = 100;
+		var updateInterval = 1000;
+		var now = new Date().getTime();
+
+		var options = {
+			series: {
+				lines: {
+					lineWidth: 1.2
+				}
+			},
+			xaxis: {
+				mode: "time",
+				timezone: "browser",
+				timeformat: "%Y/%m/%d %H:%M:%S",
+				tickLength: 0,
+
+				tickSize: [10, "second"],
+
+				axisLabelUseCanvas: true,
+				axisLabelFontSizePixels: 12,
+				axisLabelFontFamily: 'Verdana, Arial',
+				axisLabelPadding: 10
+			},
+			yaxes: [
+				{
+					min: 0,
+					max: 100,
+					tickSize: 10,
+					tickFormatter: function (v, axis) {
+						if (v % 10 == 0) {
+							return v + "%";
+						} else {
+							return "";
+						}
+					},
+					position: "right",
+					axisLabelUseCanvas: true,
+					axisLabelFontSizePixels: 12,
+					axisLabelFontFamily: 'Verdana, Arial',
+					axisLabelPadding: 6
+				}
+			],
+			legend: {
+
+				labelBoxBorderColor: "#117dbb",
+				noColumns: 0,
+				position: "nw"
+			},
+			grid: {
+				color: "#117dbb",
+				tickColor: "#d9eaf4",
+				backgroundColor: "#ffffff"
+			}
+		};
+
+		function initData() {
+			for (var i = 0; i < totalPoints; i++) {
+				var temp = [now += updateInterval, 0];
+				cpu.push(temp);
+			}
+		}
+
+		function GetData() {
+			FlyJSONP.init({debug: true});
+			FlyJSONP.get({
+				url: "${pageContext.request.contextPath}/api/assignments/" + token + "/measurements?page=1&pageSize=1",
+				success: update,
+				error: function () {
+					setTimeout(GetData, updateInterval);
+				}
+			});
+		}
+
+
+		function update(_data) {
+			var cpu_data = Math.round(_data.results[0].measurements['cpu.utils']);
+			cpu.shift();
+			now += updateInterval
+
+			temp = [now, cpu_data];
+			cpu.push(temp);
+
+
+			dataset = [
+				{label: "CPU:" + cpu_data + "%", data: cpu, lines: {fill: true, lineWidth: 0.5}, color: "#f1f6fa"}
+			];
+
+			$.plot($("#charts_1"), dataset, options);
+			setTimeout(GetData, updateInterval);
+		}
+
+
+		$(document).ready(function () {
+			initData();
+
+			dataset = [
+				{label: "CPU", data: cpu, lines: {fill: true, lineWidth: 0.5}, color: "#f1f6fa"}
+			];
+
+			$.plot($("#charts_1"), dataset, options);
+			setTimeout(GetData, updateInterval);
+
+		});
+
+		/** Create memory_1 */
+
+		var memory = [];
+		var memory_dataset;
+		var memory_totalPoints = 100;
+		var memory_updateInterval = 1000;
+		var memory_now = new Date().getTime();
+
+		var options = {
+			series: {
+				lines: {
+					lineWidth: 1.2
+				}
+			},
+			xaxis: {
+				mode: "time",
+				timezone: "browser",
+				timeformat: "%Y/%m/%d %H:%M:%S",
+				tickLength: 0,
+
+				tickSize: [10, "second"],
+
+				axisLabelUseCanvas: true,
+				axisLabelFontSizePixels: 12,
+				axisLabelFontFamily: 'Verdana, Arial',
+				axisLabelPadding: 10
+			},
+			yaxes: [
+				{
+					min: 0,
+					max: 100,
+					tickSize: 10,
+					tickFormatter: function (v, axis) {
+						if (v % 10 == 0) {
+							return v + "%";
+						} else {
+							return "";
+						}
+					},
+					position: "right",
+					axisLabelUseCanvas: true,
+					axisLabelFontSizePixels: 12,
+					axisLabelFontFamily: 'Verdana, Arial',
+					axisLabelPadding: 6
+				}
+			],
+			legend: {
+
+				labelBoxBorderColor: "#117dbb",
+				noColumns: 0,
+				position: "nw"
+			},
+			grid: {
+				color: "#117dbb",
+				tickColor: "#d9eaf4",
+				backgroundColor: "#ffffff"
+			}
+		};
+
+		function memory_initData() {
+			for (var i = 0; i < memory_totalPoints; i++) {
+				var memory_temp = [memory_now += memory_updateInterval, 0];
+				memory.push(memory_temp);
+			}
+		}
+
+		function memory_GetData() {
+			FlyJSONP.init({debug: true});
+			FlyJSONP.get({
+				url: "${pageContext.request.contextPath}/api/assignments/" + token + "/measurements?page=1&pageSize=1",
+				success: memory_update,
+				error: function () {
+					setTimeout(memory_GetData, memory_updateInterval);
+				}
+			});
+		}
+
+
+		function memory_update(_data) {
+			var memory_data = Math.round(_data.results[0].measurements['mem.utils']);
+			memory.shift();
+			memory_now += memory_updateInterval
+
+			memory_temp = [now, memory_data];
+			memory.push(memory_temp);
+
+
+			memory_dataset = [
+				{
+					label: "Memory:" + memory_data + "%",
+					data: memory,
+					lines: {fill: true, lineWidth: 0.5},
+					color: "#f1f6fa"
+				}
+			];
+
+			$.plot($("#memory_1"), memory_dataset, options);
+			setTimeout(memory_GetData, memory_updateInterval);
+		}
+
+
+		$(document).ready(function () {
+			memory_initData();
+
+			memory_dataset = [
+				{label: "Memory", data: memory, lines: {fill: true, lineWidth: 0.5}, color: "#f1f6fa"}
+			];
+
+			$.plot($("#memory_1"), memory_dataset, options);
+			setTimeout(memory_GetData, memory_updateInterval);
+
+		});
+
 		/** Create AJAX datasource for alerts list */
 		alertsDS = new kendo.data.DataSource({
 			transport : {

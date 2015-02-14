@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns="http://www.sitewhere.com/schema/sitewhere/ce" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:beans="http://www.springframework.org/schema/beans" targetNamespace="http://www.sitewhere.com/schema/sitewhere/ce"
-	elementFormDefault="qualified" attributeFormDefault="unqualified">
+			targetNamespace="http://www.sitewhere.com/schema/sitewhere/ce"
+			elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 	<xsd:import namespace="http://www.springframework.org/schema/beans"
 		schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"/>
@@ -622,6 +622,81 @@
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:attributeGroup>
+
+	<!-- Event source that pulls binary information from an EventHub endpoint and decodes it -->
+	<xsd:element name="eventhub-event-source" type="eventhubEventSourceType"
+				 substitutionGroup="abstract-event-source">
+		<xsd:annotation>
+			<xsd:documentation>Event source that pulls binary information from an EventHub endpoint and
+				decodes it
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="eventhubEventSourceType">
+		<xsd:complexContent>
+			<xsd:extension base="abstractEventSourceType">
+				<xsd:sequence>
+					<xsd:element ref="abstract-decoder"/>
+				</xsd:sequence>
+				<xsd:attributeGroup ref="event-source-attributes"/>
+				<xsd:attributeGroup ref="eventhub-inbound-attributes"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<!-- Attributes used for inbound eventhub processing -->
+	<xsd:attributeGroup name="eventhub-inbound-attributes">
+		<xsd:attribute name="targetFqn" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					EventHub targetFqn address.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="namespace" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					EventHub namespace.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="entityPath" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					EventHub entityPath.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="partitionCount" type="xsd:int">
+			<xsd:annotation>
+				<xsd:documentation>
+					EventHub partition count.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="zkStateStore" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					zookeeper store url for EventHub state persistence.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="username" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					username for EventHub connection.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="password" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					password for EventHub connection.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:attributeGroup>
+
 
 	<!-- Event source that pulls binary information from an AcitveMQ queue and decodes it -->
 	<xsd:element name="activemq-event-source" type="activemqEventSourceType"

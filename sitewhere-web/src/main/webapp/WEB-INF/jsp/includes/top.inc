@@ -7,6 +7,10 @@
 <script src="${pageContext.request.contextPath}/scripts/kendo.web.min.js"></script>
 <script src="${pageContext.request.contextPath}/scripts/modernizr.js"></script>
 <script src="${pageContext.request.contextPath}/scripts/sitewhere.js"></script>
+<script src="${pageContext.request.contextPath}/charts/media/js/flyjsonp.js"></script>
+<script src="${pageContext.request.contextPath}/charts/media/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/charts/media/js/jquery.flot.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/charts/media/js/jquery.flot.time.js"></script>
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
  <link href="${pageContext.request.contextPath}/css/kendo.common.min.css" rel="stylesheet" />
 <link href="${pageContext.request.contextPath}/css/kendo.bootstrap.min.css" rel="stylesheet" />
@@ -31,6 +35,7 @@
 <c:if test="${use_mqtt == true}">
 <script src="${pageContext.request.contextPath}/scripts/mqttws31.js"></script>
 </c:if>
+
 </head>
 <body class="sw-body">
 	<div class="sw-container">
