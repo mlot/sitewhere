@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="sitewhere_title" value="Manage Device Specifications" />
+<c:set var="sitewhere_title" value="${rb.getString('jsp.specifications.list.managedevicespecifications')}" />
 <c:set var="sitewhere_section" value="specifications" />
 <%@ include file="../includes/top.inc"%>
 
@@ -14,9 +14,9 @@
 	<h1 class="ellipsis"><c:out value="${sitewhere_title}"/></h1>
 	<div class="sw-title-bar-right">
 		<a id="btn-filter-results" class="btn" href="javascript:void(0)">
-			<i class="icon-search sw-button-icon"></i> Filter Results</a>
+			<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.specifications.list.filterresults")} </a>
 		<a id="btn-add-specification" class="btn" href="javascript:void(0)">
-			<i class="icon-plus sw-button-icon"></i> Add New Specification</a>
+			<i class="icon-plus sw-button-icon"></i> ${rb.getString("jsp.specifications.list.addnewspecification")} </a>
 	</div>
 </div>
 <div id="specifications" class="sw-specification-list"></div>

@@ -80,7 +80,7 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Close</a> 
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString('jsp.close')}</a> 
 	</div>
 </div>
 

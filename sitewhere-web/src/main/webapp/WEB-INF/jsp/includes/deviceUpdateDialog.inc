@@ -29,13 +29,13 @@
 <div id="du-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>Update Device</h3>
+		<h3>${rb.getString('jsp.includes.deviceUpdateDialog.updatedevice') }</h3>
 	</div>
 	<div class="modal-body">
 		<div id="du-tabs">
 			<ul>
-				<li class="k-state-active">Device Details</li>
-				<li>Metadata</li>
+				<li class="k-state-active">${rb.getString('jsp.includes.deviceCreateDialog.devicedetails') }</li>
+				<li>${rb.getString('jsp.assignments.emulator.metadata') }</li>
 			</ul>
 			<div>
 				<div style="padding-top: 20px;">
@@ -43,7 +43,7 @@
 				</div>
 				<form id="du-general-form" class="form-horizontal" style="padding-top: 10px;">
 					<div class="control-group">
-						<label class="control-label" for="du-comments">Comments</label>
+						<label class="control-label" for="du-comments">${rb.getString('jsp.includes.deviceCreateDialog.comments') }</label>
 						<div class="controls">
 							<textarea id="du-comments" class="input-xlarge" style="height: 10em;"></textarea>
 						</div>
@@ -62,8 +62,8 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
-		<a id="du-dialog-submit" href="javascript:void(0)" class="btn btn-primary">Save</a>
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString('jsp.assignments.emulator.cancel') }</a> 
+		<a id="du-dialog-submit" href="javascript:void(0)" class="btn btn-primary">${rb.getString('jsp.includes.siteCreateDialog.save') }</a>
 	</div>
 </div>
 
@@ -72,10 +72,10 @@
 	<div class="sw-device-update-imgwrapper">
 		<img class="sw-device-update-img" src="#:specification.asset.imageUrl#"/>
 	</div>
-	<p class="ellipsis"><span class="sw-device-update-label">Hardware Id:</span> #:hardwareId#</p>
-	<p class="ellipsis"><span class="sw-device-update-label">Specification:</span> #:specification.name#</p>
-	<p class="ellipsis"><span class="sw-device-update-label">Created:</span> #= formattedDate(kendo.parseDate(createdDate)) #</p>
-	<p class="ellipsis"><span class="sw-device-update-label">Updated:</span> #= formattedDate(kendo.parseDate(updatedDate)) #</p>
+	<p class="ellipsis"><span class="sw-device-update-label">${rb.getString('jsp.includes.deviceCreateDialog.hardwareid') }:</span> #:hardwareId#</p>
+	<p class="ellipsis"><span class="sw-device-update-label">${rb.getString('jsp.includes.deviceCreateDialog.specification') }:</span> #:specification.name#</p>
+	<p class="ellipsis"><span class="sw-device-update-label">${rb.getString('jsp.users.list.created') }:</span> #= formattedDate(kendo.parseDate(createdDate)) #</p>
+	<p class="ellipsis"><span class="sw-device-update-label">${rb.getString('jsp.users.list.updated') }:</span> #= formattedDate(kendo.parseDate(updatedDate)) #</p>
 </script>
 
 <script>

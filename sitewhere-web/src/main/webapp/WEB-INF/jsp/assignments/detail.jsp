@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html class="sw-body">
@@ -14,9 +13,8 @@
 	<link href="${pageContext.request.contextPath}/charts/media/css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 
-<c:set var="sitewhere_title" value="View Assignment" />
+<c:set var="sitewhere_title" value="${rb.getString('jsp.assignments.detial.viewassignment') }" />
 <c:set var="sitewhere_section" value="sites" />
-
 <%@ include file="../includes/top.inc"%>
 
 <style>
@@ -34,9 +32,9 @@
 	<h1 class="ellipsis"><c:out value="${sitewhere_title}"/></h1>
 	<div class="sw-title-bar-right">
 		<a id="btn-emulator" class="btn" href="emulator.html?token=<c:out value="${assignment.token}"/>">
-			<i class="icon-bolt sw-button-icon"></i> Emulate Assignment</a>
+			<i class="icon-bolt sw-button-icon"></i> ${rb.getString("jsp.assignments.detail.emulateassignment")}</a>
 		<a id="btn-edit-assignment" class="btn" href="javascript:void(0)">
-			<i class="icon-edit sw-button-icon"></i> Edit Assignment</a>
+			<i class="icon-edit sw-button-icon"></i> ${rb.getString("jsp.assignments.detail.editassignment")}</a>
 	</div>
 </div>
 
@@ -46,23 +44,21 @@
 <!-- Tab panel -->
 <div id="tabs">
 	<ul>
-		<li class="k-state-active">Locations</li>
-		<li>Measurements</li>
-		<li>Alerts</li>
-		<li>Command Invocations</li>
+		<li class="k-state-active">${rb.getString("jsp.assignments.detail.locations")}</li>
+		<li>${rb.getString("jsp.assignments.detail.measurements")}</li>
+		<li>${rb.getString("jsp.assignments.detail.alerts")}</li>
+		<li>${rb.getString("jsp.assignments.detail.commandinvocations")}</li>
 		<li>CPU Charts</li>
 		<li>Memory Charts</li>
-
-
 	</ul>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Locations</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.assignments.detail.devicelocations")}</div>
 			<div>
 				<a id="btn-filter-locations" class="btn" href="javascript:void(0)">
-					<i class="icon-search sw-button-icon"></i> Filter Results</a>
+					<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.assignments.detail.filterresults")}</a>
 				<a id="btn-refresh-locations" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.assignments.detail.refresh")}</a>
 			</div>
 		</div>
 		<table id="locations">
@@ -74,10 +70,10 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th>Latitude</th>
-					<th>Longitude</th>
-					<th>Elevation</th>
-					<th>Event Date</th>
+					<th>${rb.getString("jsp.assignments.detail.latitude")}</th>
+					<th>${rb.getString("jsp.assignments.detail.longitude")}</th>
+					<th>${rb.getString("jsp.assignments.detail.elevation")}</th>
+					<th>${rb.getString("jsp.assignments.detail.eventdate")}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -88,12 +84,12 @@
 	</div>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Measurements</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.assignments.detail.devicemeasurements")}</div>
 			<div>
 				<a id="btn-filter-measurements" class="btn" href="javascript:void(0)">
-					<i class="icon-search sw-button-icon"></i> Filter Results</a>
+					<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.assignments.detail.filterresults")}</a>
 				<a id="btn-refresh-measurements" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.assignments.detail.refresh")}</a>
 			</div>
 		</div>
 		<table id="measurements">
@@ -103,8 +99,8 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th>Measurements</th>
-					<th>Event Date</th>
+					<th>${rb.getString("jsp.assignments.detail.measurements")}</th>
+					<th>${rb.getString("jsp.assignments.detail.eventdate")}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -115,12 +111,12 @@
 	</div>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Alerts</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.assignments.detail.devicealerts")}</div>
 			<div>
 				<a id="btn-filter-alerts" class="btn" href="javascript:void(0)">
-					<i class="icon-search sw-button-icon"></i> Filter Results</a>
+					<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.assignments.detail.filterresults")}</a>
 				<a id="btn-refresh-alerts" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.assignments.detail.refresh")}</a>
 			</div>
 		</div>
 		<table id="alerts">
@@ -132,10 +128,10 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th>Type</th>
-					<th>Message</th>
-					<th>Source</th>
-					<th>Event Date</th>
+					<th>${rb.getString("jsp.assignments.detail.type")}</th>
+					<th>${rb.getString("jsp.assignments.detail.message")}</th>
+					<th>${rb.getString("jsp.assignments.detail.source")}</th>
+					<th>${rb.getString("jsp.assignments.detail.eventdate")}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -146,14 +142,14 @@
 	</div>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Command Invocations</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.assignments.detail.devicecommandinvocations")}</div>
 			<div>
 				<a id="btn-filter-invocations" class="btn" href="javascript:void(0)">
-					<i class="icon-search sw-button-icon"></i> Filter Results</a>
+					<i class="icon-search sw-button-icon"></i> ${rb.getString("jsp.assignments.detail.filterresults")}</a>
 				<a id="btn-refresh-invocations" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.assignments.detail.refresh")}</a>
 				<a id="btn-create-invocation" class="btn" href="javascript:void(0)">
-					<i class="icon-bolt sw-button-icon"></i> Invoke Command</a>
+					<i class="icon-bolt sw-button-icon"></i> ${rb.getString("jsp.assignments.detail.invokecommand")}</a>
 			</div>
 		</div>
 		<table id="invocations">
@@ -166,10 +162,10 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th>Command</th>
-					<th>Source</th>
-					<th>Target</th>
-					<th>Event Date</th>
+					<th>${rb.getString("jsp.assignments.detail.command")}</th>
+					<th>${rb.getString("jsp.assignments.detail.source")}</th>
+					<th>${rb.getString("jsp.assignments.detail.target")}</th>
+					<th>${rb.getString("jsp.assignments.detail.eventdate")}</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -203,8 +199,8 @@
 <%@ include file="../includes/templateLocationEntry.inc"%>
 <%@ include file="../includes/templateMeasurementsEntry.inc"%>
 <%@ include file="../includes/templateAlertEntry.inc"%>
+<%@ include file="../includes/commonFunctions.inc"%>
 
-<%@ include file="../includes/commonFunctions.inc" %>
 <script>
 	/** Assignment token */
 	var token = '<c:out value="${assignment.token}"/>';
@@ -217,7 +213,7 @@
 	
 	/** Datasource for locations */
 	var locationsDS;
-	/**
+	
 	/** Datasource for measurements */
 	var measurementsDS;
 	
@@ -328,8 +324,7 @@
             serverSorting: true,
             pageSize: pageSize,
 		});
-
-
+		
 		/** Create the measurements list */
         $("#measurements").kendoGrid({
 			dataSource : measurementsDS,

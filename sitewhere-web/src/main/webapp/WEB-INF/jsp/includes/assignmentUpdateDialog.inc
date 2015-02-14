@@ -29,13 +29,13 @@
 <div id="au-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3 id="dialog-header">Update Device Assignment</h3>
+		<h3 id="dialog-header">${rb.getString('jsp.includes.assignmentUpdateDialog.updatedeviceassignment')}</h3>
 	</div>
 	<div class="modal-body">
 		<div id="au-tabs">
 			<ul>
-				<li class="k-state-active">Assignment Details</li>
-				<li>Metadata</li>
+				<li class="k-state-active">${rb.getString('jsp.includes.assignmentUpdateDialog.assignmentdetails')}</li>
+				<li>${rb.getString('jsp.assignments.emulator.metadata')}</li>
 			</ul>
 			<div>
 				<div style="padding-top: 20px;">
@@ -53,8 +53,8 @@
 		<input type="hidden" id="au-token"/>
 	</div>
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
-		<a id="au-submit" href="javascript:void(0)" class="btn btn-primary">Update</a>
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString('jsp.assignments.emulator.cancel')}</a> 
+		<a id="au-submit" href="javascript:void(0)" class="btn btn-primary">${rb.getString('jsp.updated')}</a>
 	</div>
 </div>
 

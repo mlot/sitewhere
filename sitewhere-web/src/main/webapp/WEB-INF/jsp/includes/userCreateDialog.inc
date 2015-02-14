@@ -2,49 +2,49 @@
 <div id="uc-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3 id="uc-dialog-header">Create User</h3>
+		<h3 id="uc-dialog-header">${rb.getString('jsp.includes.userCreateDialog.createuser')}</h3>
 	</div>
 	<div class="modal-body">
 		<div id="uc-tabs">
 			<ul>
-				<li class="k-state-active">User Details</li>
-				<li>Permissions</li>
-				<li>Metadata</li>
+				<li class="k-state-active">${rb.getString('jsp.includes.userCreateDialog.userdetails')}</li>
+				<li>${rb.getString('jsp.includes.userCreateDialog.permissions')}</li>
+				<li>${rb.getString('jsp.assignments.emulator.metadata')}</li>
 			</ul>
 			<div>
 				<form id="uc-user-form" class="form-horizontal" style="padding-top: 20px;">
 					<div class="control-group">
-						<label class="control-label" for="uc-username">Username</label>
+						<label class="control-label" for="uc-username">${rb.getString('jsp.assignments.emulator.username')}</label>
 						<div class="controls">
 							<input type="text" id="uc-username" class="input-xlarge" title="Username">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="uc-password">Password</label>
+						<label class="control-label" for="uc-password">${rb.getString('jsp.login.password')}</label>
 						<div class="controls">
 							<input type="password" id="uc-password" class="input-xlarge" title="Password">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="uc-password-confirm">Password (Confirm)</label>
+						<label class="control-label" for="uc-password-confirm">${rb.getString('jsp.login.passwordconfirm')}</label>
 						<div class="controls">
 							<input type="password" id="uc-password-confirm" class="input-xlarge" title="Password Confirm">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="uc-first-name">First Name</label>
+						<label class="control-label" for="uc-first-name">${rb.getString('jsp.users.list.firstname')}</label>
 						<div class="controls">
 							<input type="text" id="uc-first-name" class="input-xlarge" title="First Name">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="uc-last-name">Last Name</label>
+						<label class="control-label" for="uc-last-name">${rb.getString('jsp.users.list.lastname')}</label>
 						<div class="controls">
 							<input type="text" id="uc-last-name" class="input-xlarge" title="Last Name">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="uc-account-status">Account Status</label>
+						<label class="control-label" for="uc-account-status">${rb.getString('jsp.users.list.accountstatus')}</label>
 						<div class="controls">
 							<input id="uc-account-status"/>
 						</div>
@@ -65,8 +65,8 @@
 	</div>
 	<input id="uc-original-username" type="hidden" value="" />
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
-		<a id="uc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">Create</a>
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal">${rb.getString('jsp.incloudes.siteCreateDialog.cancel')}</a> 
+		<a id="uc-dialog-submit" href="javascript:void(0)" class="btn btn-primary">${rb.getString('jsp.incloudes.siteCreateDialog.create')}</a>
 	</div>
 </div>
 
@@ -259,8 +259,8 @@
 	/** Open the user create dialog */
 	function ucOpen(callback) {
 		ucClearDialog();
-		$('#uc-dialog-header').html("Create User");
-		$('#uc-dialog-submit').html("Create");
+		$('#uc-dialog-header').html("${rb.getString('jsp.includes.userCreateDialog.createuser')}");
+		$('#uc-dialog-submit').html("${rb.getString('jsp.assignments.emulator.create')}");
 		ucMetadataDS.data(new Array());
 		ucTabs.select(0);
 		
@@ -289,8 +289,8 @@
     
     /** Called on successful user load request */
     function uuUserGetSuccess(data, status, jqXHR) {
-		$('#uc-dialog-header').html("Edit User");
-		$('#uc-dialog-submit').html("Save");
+		$('#uc-dialog-header').html("${rb.getString('jsp.includes.userCreateDialog.edituser')}");
+		$('#uc-dialog-submit').html("${rb.getString('jsp.includes.siteCreateDialog.save')}");
 		
 		// Load text fields.
 		$('#uc-original-username').val(data.username);

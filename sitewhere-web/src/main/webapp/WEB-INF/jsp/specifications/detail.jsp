@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="sitewhere_title" value="View Specification" />
+<c:set var="sitewhere_title" value="${rb.getString('jsp.specifications.detail.viewspecification')}" />
 <c:set var="sitewhere_section" value="specifications" />
 <c:set var="use_map_includes" value="true" />
 <%@ include file="../includes/top.inc"%>
@@ -51,7 +51,7 @@
 	<h1 class="ellipsis"><c:out value="${sitewhere_title}"/></h1>
 	<div class="sw-title-bar-right">
 		<a id="btn-edit-specification" class="btn" href="javascript:void(0)">
-			<i class="icon-pencil sw-button-icon"></i> Edit Specification</a>
+			<i class="icon-pencil sw-button-icon"></i> ${rb.getString("jsp.specifications.detail.editspecification")} </a>
 	</div>
 </div>
 
@@ -61,34 +61,34 @@
 <!-- Tab panel -->
 <div id="tabs">
 	<ul>
-		<li class="k-state-active">Commands</li>
-		<li>Code Generation</li>
+		<li class="k-state-active">${rb.getString("jsp.specifications.detail.commands")}</li>
+		<li>${rb.getString("jsp.specifications.detail.codegeneration")}</li>
 <c:choose>
 	<c:when test="${specification.containerPolicy == 'Composite'}">
-		<li>Composition</li>
+		<li>${rb.getString("jsp.specifications.detail.composition")}</li>
 	</c:when>
 </c:choose>
 	</ul>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Commands</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.specifications.detail.devicecommands")}</div>
 			<div>
 				<a id="btn-refresh-commands" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.specifications.detail.refresh")}</a>
 				<a id="btn-add-command" class="btn" href="javascript:void(0)">
-					<i class="icon-plus sw-button-icon"></i> Add New Command</a>
+					<i class="icon-plus sw-button-icon"></i> ${rb.getString("jsp.specifications.detail.addnewcommand")}</a>
 			</div>
 		</div>
 		<div id="commands" class="sw-assignment-list"></div>
 	</div>
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Google Protocol Buffer Definition</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.specifications.detail.googleprotocolbufferdefinition")}</div>
 			<div>
 				<a id="btn-refresh-protobuf" class="btn" href="javascript:void(0)">
-					<i class="icon-refresh sw-button-icon"></i> Refresh</a>
+					<i class="icon-refresh sw-button-icon"></i> ${rb.getString("jsp.specifications.detail.refresh")}</a>
 				<a id="btn-download-protobuf" class="btn" href="javascript:void(0)">
-					<i class="icon-download-alt sw-button-icon"></i> Download</a>
+					<i class="icon-download-alt sw-button-icon"></i> ${rb.getString("jsp.specifications.detail.download")}</a>
 			</div>
 		</div>
 		<div id="sw-proto-section" class="protobuf"></div>
@@ -97,12 +97,12 @@
 	<c:when test="${specification.containerPolicy == 'Composite'}">
 	<div>
 		<div class="k-header sw-button-bar">
-			<div class="sw-button-bar-title">Device Element Schema</div>
+			<div class="sw-button-bar-title">${rb.getString("jsp.specifications.detail.deviceelementschema")}</div>
 			<div>
 				<a id="btn-add-unit" class="btn" href="javascript:void(0)">
-					<i class="icon-folder-close sw-button-icon"></i> Add Device Unit</a>
+					<i class="icon-folder-close sw-button-icon"></i> ${rb.getString("jsp.specifications.detail.adddeviceunit")}</a>
 				<a id="btn-add-slot" class="btn" href="javascript:void(0)">
-					<i class="icon-link sw-button-icon"></i> Add Device Slot</a>
+					<i class="icon-link sw-button-icon"></i> ${rb.getString("jsp.specifications.detail.adddeviceslot")}</a>
 			</div>
 		</div>
 		<div id="sw-composition-section"></div>

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html class="sw-body">
 <head>
@@ -49,42 +51,42 @@
 					<ul class="nav nav-pills">
 <c:choose>
 	<c:when test="${sitewhere_section == 'sites'}">
-		<li class="active"><a href="${pageContext.request.contextPath}/admin/sites/list.html">Sites</a></li>
+		<li class="active"><a href="${pageContext.request.contextPath}/admin/sites/list.html">${rb.getString("jsp.top.sites")}</a></li>
 	</c:when>
 	<c:otherwise>
-		<li><a href="${pageContext.request.contextPath}/admin/sites/list.html">Sites</a></li>
+		<li><a href="${pageContext.request.contextPath}/admin/sites/list.html">${rb.getString("jsp.top.sites")}</a></li>
 	</c:otherwise>
 </c:choose>
 <c:choose>
 	<c:when test="${sitewhere_section == 'specifications'}">
-		<li class="active"><a href="${pageContext.request.contextPath}/admin/specifications/list.html">Specifications</a></li>
+		<li class="active"><a href="${pageContext.request.contextPath}/admin/specifications/list.html">${rb.getString("jsp.top.specifications")}</a></li>
 	</c:when>
 	<c:otherwise>
-		<li><a href="${pageContext.request.contextPath}/admin/specifications/list.html">Specifications</a></li>
+		<li><a href="${pageContext.request.contextPath}/admin/specifications/list.html">${rb.getString("jsp.top.specifications")}</a></li>
 	</c:otherwise>
 </c:choose>
 <c:choose>
 	<c:when test="${sitewhere_section == 'devices'}">
-		<li class="active"><a href="${pageContext.request.contextPath}/admin/devices/list.html">Devices</a></li>
+		<li class="active"><a href="${pageContext.request.contextPath}/admin/devices/list.html">${rb.getString("jsp.top.devices")}</a></li>
 	</c:when>
 	<c:otherwise>
-		<li><a href="${pageContext.request.contextPath}/admin/devices/list.html">Devices</a></li>
+		<li><a href="${pageContext.request.contextPath}/admin/devices/list.html">${rb.getString("jsp.top.devices")}</a></li>
 	</c:otherwise>
 </c:choose>
 <c:choose>
 	<c:when test="${sitewhere_section == 'devicegroups'}">
-		<li class="active"><a href="${pageContext.request.contextPath}/admin/groups/list.html">Device Groups</a></li>
+		<li class="active"><a href="${pageContext.request.contextPath}/admin/groups/list.html">${rb.getString("jsp.top.devicegroups")}</a></li>
 	</c:when>
 	<c:otherwise>
-		<li><a href="${pageContext.request.contextPath}/admin/groups/list.html">Device Groups</a></li>
+		<li><a href="${pageContext.request.contextPath}/admin/groups/list.html">${rb.getString("jsp.top.devicegroups")}</a></li>
 	</c:otherwise>
 </c:choose>
 <c:choose>
 	<c:when test="${sitewhere_section == 'users'}">
-		<li class="active"><a href="${pageContext.request.contextPath}/admin/users/list.html">Users</a></li>
+		<li class="active"><a href="${pageContext.request.contextPath}/admin/users/list.html">${rb.getString("jsp.top.users")}</a></li>
 	</c:when>
 	<c:otherwise>
-		<li><a href="${pageContext.request.contextPath}/admin/users/list.html">Users</a></li>
+		<li><a href="${pageContext.request.contextPath}/admin/users/list.html">${rb.getString("jsp.top.users")}</a></li>
 	</c:otherwise>
 </c:choose>
 					</ul>
@@ -101,7 +103,7 @@
 							<span class="caret" style="margin-left: 4px"></span>
 						</a>
 						<ul class="dropdown-menu pull-right" style="text-align: left;">
-							<li><a tabindex="-1" href="<c:url value="/j_spring_security_logout"/>">Log Out</a></li>
+							<li><a tabindex="-1" href="<c:url value="/j_spring_security_logout"/>">${rb.getString("jsp.top.logout")}</a></li>
 						</ul>
 					</div>			
 				</div>
@@ -116,7 +118,7 @@
 				<div id="alert-dialog-body" class="modal-body">
 				</div>
 				<div class="modal-footer">
-					<a href="javascript:void(0)" data-dismiss="modal" class="btn btn-primary">Close</a>
+					<a href="javascript:void(0)" data-dismiss="modal" class="btn btn-primary">${rb.getString('jsp.close')}</a>
 				</div>
 			</div>
 			
@@ -129,9 +131,9 @@
 				<div id="confirm-dialog-body" class="modal-body">
 				</div>
 				<div class="modal-footer">
-					<a href="javascript:void(0)" onclick="swConfirmSubmit(false)" class="btn">Cancel</a>
+					<a href="javascript:void(0)" onclick="swConfirmSubmit(false)" class="btn">${rb.getString("jsp.incloudes.siteCreateDialog.cancel")}</a>
 					<a href="javascript:void(0)" onclick="swConfirmSubmit(true)" id="confirm-dialog-submit" 
-						class="btn btn-primary">OK</a>
+						class="btn btn-primary">${rb.getString("jsp.incloudes.top.ok")}</a>
 				</div>
 			</div>
 			
