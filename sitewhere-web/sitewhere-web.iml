@@ -12,7 +12,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -147,6 +147,18 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.2.6" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.codehaus.woodstox:wstx-asl:3.2.7" level="project" />
     <orderEntry type="module" module-name="sitewhere-spring" />
+    <orderEntry type="module" module-name="sitewhere-eventhub" />
+    <orderEntry type="library" name="Maven: org.apache.curator:curator-framework:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.curator:curator-client:2.5.0" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: org.apache.qpid:qpid-amqp-1-0-client-jms:0.3X">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../sitewhere-eventhub/lib/qpid-amqp-1-0-client-all-mod.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="module" module-name="sitewhere-twilio" />
     <orderEntry type="library" name="Maven: com.twilio.sdk:twilio-java-sdk:3.4.5" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1" level="project" />

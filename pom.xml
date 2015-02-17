@@ -37,6 +37,7 @@
 				<module>sitewhere-solr</module>
 				<module>sitewhere-spring</module>
 				<module>sitewhere-twilio</module>
+				<module>sitewhere-eventhub</module>
 				<module>sitewhere-web</module>
 			</modules>
 		</profile>
@@ -56,6 +57,7 @@
 				<module>sitewhere-solr</module>
 				<module>sitewhere-spring</module>
 				<module>sitewhere-twilio</module>
+				<module>sitewhere-eventhub</module>
 				<module>sitewhere-documentation</module>
 				<module>sitewhere-web</module>
 			</modules>
