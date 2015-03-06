@@ -24,7 +24,7 @@
 		<td class="ellipsis">#:cdRoles#</td>
 		<td>
 			<div style="width: 100%; text-align: left">
-				<i class="icon-remove sw-action-glyph sw-delete-glyph" title="Delete Group Element"
+				<i class="icon-remove sw-action-glyph sw-delete-glyph" title="${rb.getString('sitewhere.includes.templateDeviceGroupElementEntry.deletegroupelement')}"
 					onclick="onDeleteDeviceGroupElement(event, '#:type#', '#:elementId#')"></i>
 			</div>
 		</td>

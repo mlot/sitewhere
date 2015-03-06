@@ -118,10 +118,10 @@
 		</div>
 # } #
 		<div class="sw-assignment-list-entry-actions">
-			<p class="ellipsis"><span class="sw-assignment-list-entry-label" style="min-width: 70px;">Assigned:</span> #= formattedDate(activeDate) #</p>
-			<p class="ellipsis"><span class="sw-assignment-list-entry-label" style="min-width: 70px;">Released:</span> #= formattedDate(releasedDate) #</p>
+			<p class="ellipsis"><span class="sw-assignment-list-entry-label" style="min-width: 70px;">${rb.getString('sitewhere.public.assigned')}:</span> #= formattedDate(activeDate) #</p>
+			<p class="ellipsis"><span class="sw-assignment-list-entry-label" style="min-width: 70px;">${rb.getString('sitewhere.public.released')}:</span> #= formattedDate(releasedDate) #</p>
 # if (data.status == 'Active') { #
-			<span class="sw-min-70 sw-assignment-list-entry-label">Status:</span>			
+			<span class="sw-min-70 sw-assignment-list-entry-label">${rb.getString('sitewhere.public.status')}:</span>			
 			<div class="btn-group" style="margin-top: -6px;">
 				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
 					Active
@@ -135,7 +135,7 @@
 				</ul>
 			</div>
 # } else if (data.status == 'Missing') { #
-			<span class="sw-min-70 sw-assignment-list-entry-label">Status:</span>			
+			<span class="sw-min-70 sw-assignment-list-entry-label">${rb.getString('sitewhere.public.status')}:</span>			
 			<div class="btn-group" style="margin-top: -6px;">
 				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
 					Missing
@@ -147,17 +147,17 @@
 				</ul>
 			</div>
 # } else { #
-			<p class="ellipsis"><span class="sw-min-70 sw-assignment-list-entry-label">Status:</span> #:status#</p>
+			<p class="ellipsis"><span class="sw-min-70 sw-assignment-list-entry-label">${rb.getString('sitewhere.public.status')}:</span> #:status#</p>
 # } #
 # if (data.inDetailView == null) { #
 			<div class="btn-group btn-group-vertical" style="position: absolute; right: 0px; top: -2px;">
-				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="Edit Assignment" style="color: \\#009;"
+				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="${rb.getString('sitewhere.includes.templateAssignmentEntry.editassignment')}" style="color: \\#009;"
 					href="javascript:void(0)" onclick="onEditAssignment(event, '#:token#')">
 					<i class="icon-edit icon-white"></i></a>
-				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="Delete Assignment" style="color: \\#900;" 
+				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="${rb.getString('sitewhere.includes.templateAssignmentEntry.deleteassignment')}" style="color: \\#900;" 
 					href="javascript:void(0)" onclick="onDeleteAssignment(event, '#:token#')">
 					<i class="icon-remove icon-white"></i></a>
-				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="View Assignment" style="color: \\#060;" 
+				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="${rb.getString('sitewhere.includes.templateAssignmentEntry.viewassignment')}" style="color: \\#060;" 
 					href="javascript:void(0)" onclick="onViewAssignment(event, '#:token#')">
 					<i class="icon-chevron-right icon-white"></i></a>
 			</div>

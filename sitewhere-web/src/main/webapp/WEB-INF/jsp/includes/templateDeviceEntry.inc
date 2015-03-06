@@ -83,17 +83,17 @@
 			<span class="label label-info sw-device-list-entry-logo-tag">Device</span>
 		</div>
 		<div class="sw-device-list-entry-actions">
-			<p class="ellipsis"><span class="sw-device-list-entry-label sw-min-70">Created:</span> #= formattedDate(createdDate) #</p>
-			<p class="ellipsis"><span class="sw-device-list-entry-label sw-min-70">Updated:</span> #= formattedDate(updatedDate) #</p>
+			<p class="ellipsis"><span class="sw-device-list-entry-label sw-min-70">${rb.getString('sitewhere.public.created')}:</span> #= formattedDate(createdDate) #</p>
+			<p class="ellipsis"><span class="sw-device-list-entry-label sw-min-70">${rb.getString('sitewhere.public.updated')}:</span> #= formattedDate(updatedDate) #</p>
 # if (data.inDetailView == null) { #
 			<div class="btn-group btn-group-vertical" style="position: absolute; right: 0px; top: -2px;">
-				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="Edit Device" style="color: \\#009;" 
+				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="${rb.getString('sitewhere.includes.templateDeviceEntry.editdevice')}" style="color: \\#009;" 
 					href="javascript:void(0)" onclick="onDeviceEditClicked(event, '#:hardwareId#');">
 					<i class="icon-edit icon-white"></i></a>
-				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="Delete Device" style="color: \\#900;" 
+				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="${rb.getString('sitewhere.includes.templateDeviceEntry.deletedevice')}" style="color: \\#900;" 
 					href="javascript:void(0)" onclick="onDeviceDeleteClicked(event, '#:hardwareId#')">
 					<i class="icon-remove icon-white"></i></a>
-				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="View Device" style="color: \\#060;" 
+				<a class="btn btn-small sw-action-glyph sw-primary-glyph" title="${rb.getString('sitewhere.includes.templateDeviceEntry.viewdevice')}" style="color: \\#060;" 
 					href="javascript:void(0)" onclick="onDeviceOpenClicked(event, '#:hardwareId#')">
 					<i class="icon-chevron-right icon-white"></i></a>
 			</div>
@@ -124,9 +124,9 @@
 				Unassociated Device
 			</p>
 # } #
-			<p class="ellipsis"><span class="sw-device-list-entry-label sw-min-70">Assigned:</span> #= formattedDate(assignment.activeDate) #</p>
+			<p class="ellipsis"><span class="sw-device-list-entry-label sw-min-70">${rb.getString('sitewhere.public.assigned')}:</span> #= formattedDate(assignment.activeDate) #</p>
 # if (assignment.status == 'Active') { #
-			<span class="sw-device-list-entry-label sw-min-70">Status:</span> 
+			<span class="sw-device-list-entry-label sw-min-70">${rb.getString('sitewhere.public.status')}:</span> 
 			<div class="btn-group" style="margin-top: -6px;">
 				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
 					Active
@@ -140,7 +140,7 @@
 				</ul>
 			</div>
 # } else if (assignment.status == 'Missing') { #
-			<span class="sw-device-list-entry-label sw-min-70">Status:</span> 
+			<span class="sw-device-list-entry-label sw-min-70">${rb.getString('sitewhere.public.status')}:</span> 
 			<div class="btn-group" style="margin-top: -6px;">
 				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
 					Missing
@@ -152,7 +152,7 @@
 				</ul>
 			</div>
 # } else { #
-			<p class="ellipsis"><span class="sw-device-list-entry-label sw-min-70">Status:</span> #:assignment.status#</p>
+			<p class="ellipsis"><span class="sw-device-list-entry-label sw-min-70">${rb.getString('sitewhere.public.status')}:</span> #:assignment.status#</p>
 # } #
 		</div>
 # } else { #

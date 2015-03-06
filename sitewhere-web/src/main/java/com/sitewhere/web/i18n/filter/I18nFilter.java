@@ -16,11 +16,13 @@ import javax.servlet.http.HttpSession;
 
 public class I18nFilter implements Filter {
 	/** Property source path */
-	private String SOURCE = "i18n.sitewhere";
+	private static String SOURCE = "i18n.sitewhere";
 	/** Default Locale is US */
-	private Locale DEFAULT_LOCALE = Locale.US;
+	private static Locale DEFAULT_LOCALE = Locale.US;
 	/** Init default rb */
-	private ResourceBundle rb = ResourceBundle.getBundle(SOURCE,DEFAULT_LOCALE);
+	private static ResourceBundle default_rb = ResourceBundle.getBundle(SOURCE,DEFAULT_LOCALE);
+	/** Init cn rb */
+	private static ResourceBundle cn_rb = ResourceBundle.getBundle(SOURCE,Locale.CHINA);
 	/**  Source name */
 	private String RESOURCE_NAME = "rb";
 	/**  Custom US value */
@@ -35,13 +37,13 @@ public class I18nFilter implements Filter {
 		/** Set custom language to session */
 		HttpServletRequest request = (HttpServletRequest)req;
 		HttpServletResponse response = (HttpServletResponse)res;
-		String i18n_language = request.getParameter("i18n_language");
+		String i18n_language = request.getParameter("lng");
 		HttpSession session = request.getSession();
 		if(i18n_language != null && !"".equals(i18n_language)){
 			if(CUDTOM_CHINA_VALUE.equals(i18n_language)){
-				rb_tem = ResourceBundle.getBundle(SOURCE,Locale.CHINA);
+				rb_tem = cn_rb;
 			}else{
-				rb_tem = ResourceBundle.getBundle(SOURCE,Locale.US);
+				rb_tem = default_rb;
 			}
 			session.setAttribute(RESOURCE_NAME, rb_tem);
 			String refererUrl = getRefererUrl(request);
@@ -49,7 +51,11 @@ public class I18nFilter implements Filter {
 		}else{
 			/** Set default language to session */
 			if(session != null && session.getAttribute(RESOURCE_NAME) == null){
-				rb_tem = ResourceBundle.getBundle(SOURCE,request.getLocale());
+				if(request.getLocale().equals(Locale.CHINA)){
+					rb_tem = cn_rb;
+				}else{
+					rb_tem = default_rb;
+				}
 				session.setAttribute(RESOURCE_NAME, rb_tem);
 			}
 			chain.doFilter(request, response);
@@ -63,6 +69,6 @@ public class I18nFilter implements Filter {
 	}
 	public void init(FilterConfig arg0) throws ServletException {
 		/** Set default rb to application */
-		arg0.getServletContext().setAttribute(RESOURCE_NAME, rb);
+		arg0.getServletContext().setAttribute(RESOURCE_NAME, default_rb);
 	}
 }

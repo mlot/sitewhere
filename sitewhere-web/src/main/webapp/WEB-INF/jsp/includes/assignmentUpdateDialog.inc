@@ -99,9 +99,9 @@
 		<div style="display: inline-block;" max-width: 280px;>
 			<p class="ellipsis"><span class="sw-assignment-update-label">Type:</span> Unassociated Device</p>
 # } #
-			<p class="ellipsis"><span class="sw-assignment-update-label">Assigned:</span> #= formattedDate(kendo.parseDate(activeDate)) #</p>
-			<p class="ellipsis"><span class="sw-assignment-update-label">Released:</span> #= formattedDate(kendo.parseDate(releasedDate)) #</p>
-			<p class="ellipsis"><span class="sw-assignment-update-label">Status:</span> #:status#</p>
+			<p class="ellipsis"><span class="sw-assignment-update-label">${rb.getString('sitewhere.public.assigned')}:</span> #= formattedDate(kendo.parseDate(activeDate)) #</p>
+			<p class="ellipsis"><span class="sw-assignment-update-label">${rb.getString('sitewhere.public.released')}:</span> #= formattedDate(kendo.parseDate(releasedDate)) #</p>
+			<p class="ellipsis"><span class="sw-assignment-update-label">${rb.getString('sitewhere.public.status')}:</span> #:status#</p>
 		</div>
 	</div>
 	<div style="min-height: 120px; clear: both; border-top: 1px solid \\#eeeeee; padding-top: 15px;">
