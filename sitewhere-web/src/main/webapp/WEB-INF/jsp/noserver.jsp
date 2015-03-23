@@ -14,3 +14,7 @@
 <div class="alert alert-error" data-i18n="noserver.loaderrorms">
 </div>
 <%@ include file="includes/bottom.inc"%>
+<script type="text/javascript">
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "noserver.title";
+</script>

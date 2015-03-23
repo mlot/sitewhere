@@ -171,6 +171,9 @@
 <%@ include file="../includes/commonFunctions.inc"%>
 
 <script>
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "ssignments.detail.title";
+    
 	/** Assignment token */
 	var token = '<c:out value="${assignment.token}"/>';
 	

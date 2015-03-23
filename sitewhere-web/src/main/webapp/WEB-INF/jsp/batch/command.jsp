@@ -11,9 +11,7 @@
 
 <!-- Title Bar -->
 <div class="sw-title-bar content k-header" style="margin-bottom: -1px;">
-	<h1 class="ellipsis">
-		<c:out value="${sitewhere_title}" />
-	</h1>
+	<h1 class="ellipsis" data-i18n="batch.command.title"></h1>
 	<div class="sw-title-bar-right">
 		<a id="btn-refresh-operation" class="btn" href="javascript:void(0)" data-i18n="public.Refresh">
 			<i class="icon-refresh sw-button-icon"></i> 
@@ -73,6 +71,9 @@
 <%@ include file="../includes/commonFunctions.inc"%>
 
 <script>
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "batch.command.title";
+
 	/** Unique batch operation token */
 	var batchToken = '<c:out value="${operation.token}"/>';
 	

@@ -41,6 +41,9 @@
 <%@ include file="../includes/templateSiteEntry.inc"%>
 
 <script>
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "sites.list.title";
+
 	/** Sites datasource */
 	var sitesDS;
 

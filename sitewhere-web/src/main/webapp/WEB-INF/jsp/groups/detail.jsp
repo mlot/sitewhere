@@ -70,6 +70,9 @@
 <%@ include file="../includes/commonFunctions.inc"%>
 
 <script>
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "groups.detail.title";
+
 	var groupToken = '<c:out value="${group.token}"/>';
 
 	/** Datasource for elements */

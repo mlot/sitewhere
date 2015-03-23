@@ -312,6 +312,9 @@
 <%@ include file="../includes/commonFunctions.inc"%>
 
 <script>
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "assignments.emulator.title";
+
 	/** Assignment token */
 	var token = '<c:out value="${assignment.token}"/>';
 	

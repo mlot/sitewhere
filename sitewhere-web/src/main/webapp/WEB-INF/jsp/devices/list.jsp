@@ -44,6 +44,9 @@
 <%@ include file="../includes/commonFunctions.inc"%>
 
 <script>
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "devices.list.title";
+
 	/** Reference for device list datasource */
 	var devicesDS;
 

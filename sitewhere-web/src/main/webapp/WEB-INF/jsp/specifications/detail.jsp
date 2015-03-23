@@ -80,6 +80,9 @@
 <%@ include file="../includes/commonFunctions.inc"%>
 
 <script>
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "specifications.detail.title";
+
 	// Token for specification being viewed.
 	var specToken = '<c:out value="${specification.token}"/>';
 

@@ -199,6 +199,9 @@
 <%@ include file="../includes/commonFunctions.inc"%>
 
 <script>
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "sites.detail.title";
+
 	var siteToken = '<c:out value="${site.token}"/>';
 	
 	/** Current site */

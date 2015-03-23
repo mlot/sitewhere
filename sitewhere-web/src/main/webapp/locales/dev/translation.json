@@ -143,9 +143,6 @@
        "specificationCreateDialog":{
           "AssetProvider":"$t(public.Asset) Provider"
        },
-       "deviceSlotCreateDialog":{
-       
-       },
        "templateInvocationEntry":{
           "ViewInvocation":"$t(public.View) $t(public.Invocation)"
        },
@@ -219,8 +216,7 @@
           "AssetAssociation":"Asset Association"
        },
        "deviceUpdateDialog":{
-          "UpdateDevice":"$t(public.Update) $t(public.Device)",
-          
+          "UpdateDevice":"$t(public.Update) $t(public.Device)"
        },
        "metadata":{
           "Nameisrequired":"$t(public.Name) is $t(public.required).",
@@ -286,11 +282,13 @@
   "batch":{
        "ProcessingStatus":"$t(batch.list.Processing) $t(public.Status)",
        "command":{
-          "BCIE":"Batch Command $t(public.Invocation) $t(public.Element)s",
+          "title":"$t(public.View) $t(public.Batch) $t(public.Command) $t(public.Invocation)",
+          "BCIE":"$t(public.Batch) $t(public.Command) $t(public.Invocation) $t(public.Element)s",
           "ProcessedDate":"Processed $t(public.Date)",
           "InvocationEventId":"$t(public.Invocation) Event Id"
        },
        "list":{
+          "title":"$t(public.Manage) $t(public.Batch) Operations",
           "Processing":"Processing",
           "Operation":"Operation",
           "OperationCreated":"$t(batch.list.Operation) $t(public.Created)",
@@ -341,7 +339,7 @@
      },
      "list":{
         "title":"$t(public.Manage) $t(public.Devices)",
-        "BatchCommand":"Batch $t(public.Command)",
+        "BatchCommand":"$t(public.Batch) $t(public.Command)",
         "AddNewDevice":"$t(public.Add) $t(public.New) $t(public.Device)"
      }
   },
@@ -361,7 +359,7 @@
      }
   },
   "login":{
-      "title":"SiteWhere - $t(public.Login)",
+      "title":"$t(public.Login)",
       "LogIn":"Log In",
       "logFailMs":"$t(public.Invalid) $t(public.username) or $t(public.password) was entered",
       "msg":"The default login and password are"
@@ -397,8 +395,8 @@
   },
   "specifications":{
       "list":{
-         "AddNewSpecification":"$t(public.Add) $t(public.New) $t(public.Specification)",
-         "MDS":"$t(public.Manage) $t(public.Device) $t(public.Specification)s"
+         "title":"$t(public.Manage) $t(public.Device) $t(public.Specification)s",
+         "AddNewSpecification":"$t(public.Add) $t(public.New) $t(public.Specification)"
       },
       "detail":{
          "title":"$t(public.ViewSpecification)",
@@ -419,6 +417,6 @@
       "loaderrorms":"SiteWhere did not start successfully. Check error logs for more information."
   },
   "error":{
-      "ELP":"Error Loading Page"
+      "title":"Error Loading Page"
   }
 }

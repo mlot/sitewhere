@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html class="sw-body">
 <head>
-<title data-i18n="login.title"></title>
+<title>SiteWhere - Login</title>
 <script src="${pageContext.request.contextPath}/scripts/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/scripts/jquery.validity.js"></script>
 <script src="${pageContext.request.contextPath}/scripts/kendo.web.js"></script>
@@ -39,13 +39,22 @@
 </style>
 
 <script>
-
 $(document).ready(function() {
     /** Handle location create dialog submit */
 	$('#login-submit').click(function(event) {
 		$('#login-form').submit();
 	});
 });
+
+/** I18n title properties */
+var arry = [
+             {'key':'Username','value':'public.Username'},
+             {'key':'Password','value':'public.Password'}
+           ];
+sitewhere_i18next.title_arry = arryAccum(sitewhere_i18next.title_arry,arry);
+
+/** Set sitewhere_title */
+sitewhere_i18next.sitewhere_title = "login.title";
 </script>
 
 <body class="sw-body">

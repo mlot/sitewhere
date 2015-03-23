@@ -32,6 +32,9 @@
 <%@ include file="../includes/commonFunctions.inc"%>
 
 <script>
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "groups.list.title";
+
 	/** Reference for device group list datasource */
 	var deviceGroupsDS;
 	

@@ -71,6 +71,9 @@
 <%@ include file="../includes/commonFunctions.inc"%>
 
 <script>
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "devices.detail.title";
+
 	var hardwareId = '<c:out value="${device.hardwareId}"/>';
 
 	/** Datasource for assignments */

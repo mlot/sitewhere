@@ -52,6 +52,9 @@
 <%@ include file="../includes/userCreateDialog.inc"%>
 
 <script>
+    /** Set sitewhere_title */
+    sitewhere_i18next.sitewhere_title = "users.list.title";
+
 	/** Reference for user list datasource */
 	var usersDS;
 	

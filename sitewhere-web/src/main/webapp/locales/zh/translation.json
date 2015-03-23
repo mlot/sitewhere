@@ -143,9 +143,6 @@
        "specificationCreateDialog":{
           "AssetProvider":"$t(public.Asset)提供商"
        },
-       "deviceSlotCreateDialog":{
-         
-       },
        "templateInvocationEntry":{
           "ViewInvocation":"$t(public.View)$t(public.Invocation)"
        },
@@ -159,8 +156,8 @@
           "Assign":"任务"
        },
        "zoneCreateDialog":{
-          "ZoneSettings":"$t(public.Zone) $t(public.Settings)",
-          "ZoneName":"$t(public.Zone) $t(public.Name)",
+          "ZoneSettings":"$t(public.Zone)$t(public.Settings)",
+          "ZoneName":"$t(public.Zone)$t(public.Name)",
            "Border":"边框",
            "Fill":"填充",
            "CreateZone":"$t(public.Create)$t(public.Zone)",
@@ -286,11 +283,13 @@
   "batch":{
        "ProcessingStatus":"$t(batch.list.Processing)$t(public.Status)",
        "command":{
+          "title":"$t(public.View)$t(public.Batch)$t(public.Command)$t(public.Invocation)",
           "BCIE":"批量指令操作$t(public.Element)",
           "ProcessedDate":"处理$t(public.Date)",
           "InvocationEventId":"操作事件Id"
        },
        "list":{
+          "title":"$t(public.Manage)$t(public.Batch)操作",
           "Processing":"处理",
           "Operation":"操作",
           "OperationCreated":"$t(batch.list.Operation)$t(public.Created)",
@@ -361,7 +360,7 @@
      }
   },
   "login":{
-      "title":"SiteWhere - $t(public.Login)",
+      "title":"$t(public.Login)",
       "LogIn":"登录",
       "logFailMs":"$t(public.Invalid)$t(public.username)或$t(public.password)",
       "msg":"默认用户名和密码是"
@@ -397,8 +396,8 @@
   },
   "specifications":{
       "list":{
-         "AddNewSpecification":"$t(public.Add)$t(public.New)$t(public.Specification)",
-         "MDS":"$t(public.Manage)$t(public.Device)$t(public.Specification)"
+         "title":"$t(public.Manage)$t(public.Device)$t(public.Specification)",
+         "AddNewSpecification":"$t(public.Add)$t(public.New)$t(public.Specification)"
       },
       "detail":{
          "title":"$t(public.ViewSpecification)",
@@ -419,6 +418,6 @@
       "loaderrorms":"SiteWhere启动失败.检查错误日志和更多信息"
   },
   "error":{
-      "ELP":"页面加载错误"
+      "title":"页面加载错误"
   }
 }
