@@ -29,13 +29,13 @@
 <div id="au-dialog" class="modal hide">
 	<div class="modal-header k-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3 id="dialog-header">Update Device Assignment</h3>
+		<h3 id="dialog-header" data-i18n="includes.assignmentUpdateDialog.UpdateDeviceAssignment"></h3>
 	</div>
 	<div class="modal-body">
 		<div id="au-tabs">
 			<ul>
-				<li class="k-state-active">Assignment Details</li>
-				<li>Metadata</li>
+				<li class="k-state-active" data-i18n="includes.assignmentUpdateDialog.AssignmentDetails"></li>
+				<li data-i18n="public.Metadata"></li>
 			</ul>
 			<div>
 				<div style="padding-top: 20px;">
@@ -53,8 +53,8 @@
 		<input type="hidden" id="au-token"/>
 	</div>
 	<div class="modal-footer">
-		<a href="javascript:void(0)" class="btn" data-dismiss="modal">Cancel</a> 
-		<a id="au-submit" href="javascript:void(0)" class="btn btn-primary">Update</a>
+		<a href="javascript:void(0)" class="btn" data-dismiss="modal" data-i18n="public.Cancel"></a> 
+		<a id="au-submit" href="javascript:void(0)" class="btn btn-primary" data-i18n="public.Update"></a>
 	</div>
 </div>
 
@@ -182,7 +182,7 @@
     
     /** Called on successful assignment load request */
     function auUpdateGetSuccess(data, status, jqXHR) {
-		var template = kendo.template($("#au-static-block").html());
+		var template = kendo.template(kendoI18next("au-static-block"));
 		$('#au-static-header').html(template(data));
 		$('#au-token').val(data.token);
 		auMetadataDS.data(swLookupAsMetadata(data.metadata));

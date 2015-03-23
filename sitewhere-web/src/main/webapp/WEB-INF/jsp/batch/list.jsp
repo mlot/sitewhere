@@ -15,8 +15,8 @@
 		<c:out value="${sitewhere_title}" />
 	</h1>
 	<div class="sw-title-bar-right">
-		<a id="btn-filter-results" class="btn" href="javascript:void(0)">
-			<i class="icon-search sw-button-icon"></i> Filter Results
+		<a id="btn-filter-results" class="btn" href="javascript:void(0)" data-i18n="public.FilterResults">
+			<i class="icon-search sw-button-icon"></i>
 		</a>
 	</div>
 </div>
@@ -31,11 +31,11 @@
 	</colgroup>
 	<thead>
 		<tr>
-			<th>Operation</th>
-			<th>Processing Status</th>
-			<th>Operation Created</th>
-			<th>Processing Started</th>
-			<th>Processing Finished</th>
+			<th data-i18n="batch.list.Operation"></th>
+			<th data-i18n="batch.ProcessingStatus"></th>
+			<th data-i18n="batch.list.OperationCreated"></th>
+			<th data-i18n="batch.list.ProcessingStarted"></th>
+			<th data-i18n="batch.list.ProcessingFinished"></th>
 			<th></th>
 		</tr>
 	</thead>

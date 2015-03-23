@@ -8,7 +8,7 @@
 
 <!-- Title Bar -->
 <div class="sw-title-bar content k-header">
-	<h1><c:out value="${sitewhere_title}"/></h1>
+	<h1 data-i18n="error.ELP"></h1>
 </div>
 
 <h2></h2><c:out value="${message}"/></h2>

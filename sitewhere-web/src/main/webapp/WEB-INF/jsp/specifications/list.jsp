@@ -11,12 +11,12 @@
 
 <!-- Title Bar -->
 <div class="sw-title-bar content k-header">
-	<h1 class="ellipsis"><c:out value="${sitewhere_title}"/></h1>
+	<h1 class="ellipsis" data-i18n="specifications.list.MDS"></h1>
 	<div class="sw-title-bar-right">
-		<a id="btn-filter-results" class="btn" href="javascript:void(0)">
-			<i class="icon-search sw-button-icon"></i> Filter Results</a>
-		<a id="btn-add-specification" class="btn" href="javascript:void(0)">
-			<i class="icon-plus sw-button-icon"></i> Add New Specification</a>
+		<a id="btn-filter-results" class="btn" href="javascript:void(0)" data-i18n="public.FilterResults">
+			<i class="icon-search sw-button-icon"></i></a>
+		<a id="btn-add-specification" class="btn" href="javascript:void(0)" data-i18n="specifications.list.AddNewSpecification">
+			<i class="icon-plus sw-button-icon"></i></a>
 	</div>
 </div>
 <div id="specifications" class="sw-specification-list"></div>
@@ -93,6 +93,7 @@
 				}
 			},
             serverPaging: true,
+            autoSync: true,
             serverSorting: true,
             pageSize: 15,
 		});
@@ -100,7 +101,10 @@
 		/** Create the list of specifications */
 		$("#specifications").kendoListView({
 			dataSource : specsDS,
-			template : kendo.template($("#tpl-specification-entry").html()),
+			template : kendo.template(kendoI18next("tpl-specification-entry")),
+			change: function(e){
+                       alert("ok");
+                    }
 		});
 		
 		/** Pager for specification list */
