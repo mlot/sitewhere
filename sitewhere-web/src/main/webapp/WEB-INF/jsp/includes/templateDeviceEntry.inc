@@ -128,9 +128,7 @@
 # if (assignment.status == 'Active') { #
 			<span class="sw-device-list-entry-label sw-min-70">Status:</span> 
 			<div class="btn-group" style="margin-top: -6px;">
-				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-					Active
-					<span class="caret"></span>
+				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Active<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
 					<li><a tabindex="-1" href="javascript:void(0)" title="Release Assignment"
@@ -142,9 +140,7 @@
 # } else if (assignment.status == 'Missing') { #
 			<span class="sw-device-list-entry-label sw-min-70">Status:</span> 
 			<div class="btn-group" style="margin-top: -6px;">
-				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-					Missing
-					<span class="caret"></span>
+				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Missing<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
 					<li><a tabindex="-1" href="javascript:void(0)" title="Release Assignment"

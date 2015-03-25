@@ -123,9 +123,7 @@
 # if (data.status == 'Active') { #
 			<span class="sw-min-70 sw-assignment-list-entry-label">Status:</span>			
 			<div class="btn-group" style="margin-top: -6px;">
-				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-					Active
-					<span class="caret"></span>
+				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Active<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
 					<li><a tabindex="-1" href="javascript:void(0)" title="Release Assignment"
@@ -137,9 +135,7 @@
 # } else if (data.status == 'Missing') { #
 			<span class="sw-min-70 sw-assignment-list-entry-label">Status:</span>			
 			<div class="btn-group" style="margin-top: -6px;">
-				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-					Missing
-					<span class="caret"></span>
+				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Missing<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
 					<li><a tabindex="-1" href="javascript:void(0)" title="Release Assignment"

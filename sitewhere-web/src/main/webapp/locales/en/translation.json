@@ -124,6 +124,7 @@
        "Center":"Center",
        "Zoom":"Zoom",
        "Comments":"Comments",
+       "Missing":"Missing",
        "DeviceDetails":"$t(public.device) $t(public.Details)",
        "CommandDetails":"$t(public.Command) $t(public.Details)",
        "CreateDevice":"$t(public.Create) $t(public.device)",
@@ -131,12 +132,15 @@
        "EditUser":"$t(public.Edit) $t(public.User)",
        "DeleteDeviceGroup":"$t(public.Delete) $t(public.DeviceGroup)",
        "ReleaseAssignment":"$t(public.Release) $t(public.Assignment)",
-       "ReportMissing":"Report Missing",
+       "ReportMissing":"Report $t(includes.Missing)",
        "RelativePath":"Relative Path",
        "Namespace":"Namespace",
        "EditZone":"$t(public.Edit) $t(public.Zone)",
        "DeleteZone":"$t(public.Delete) $t(public.Zone)",
        "DeleteCommand":"$t(public.Delete) $t(public.Command)",
+       "Active":"Active",
+       "Expired":"Expired",
+       "Locked":"Locked",
        "top":{
           "LogOut":"Log Out"
        },
@@ -175,7 +179,7 @@
           "CommandInvocationDetails":"$t(public.Command) $t(public.Invocation) $t(public.Details)"
        },
        "i18next":{
-          "RDAM":"Report $t(public.device)/Asset Missing",
+          "RDAM":"Report $t(public.device)/$t(public.Asset) $t(includes.Missing)",
           "EditCommand":"$t(public.Edit) $t(public.Command)",
           "DeleteGroupElement":"$t(public.Delete) $t(public.Group) $t(public.Element)",
           "DDWATTS":"Date device was added to the system",
@@ -186,7 +190,7 @@
           "DUBA":"$t(public.device) used by assignment",
           "DDWLU":"Date device was last updated",
           "DAWLU":"Date assignment was last updated",
-          "ActiveDate":"Active $t(public.Date)",
+          "ActiveDate":"$t(includes.Active) $t(public.Date)",
           "DABA":"Date assignment became active",
           "ReleasedDate":"Released $t(public.Date)",
           "DAWR":"Date assignment was released",
@@ -194,7 +198,8 @@
           "Assignmentstatus":"$t(public.Assignment) $t(public.status)",
           "OpenAssignment":"$t(public.Open) $t(public.Assignment)",
           "OpenDevice":"$t(public.Open) $t(public.Device)",
-          "UAT":"Unique assignment token"
+          "UAT":"Unique assignment token",
+          "Spec":"Spec"
        },
        "userCreateDialog":{
           "CreateUser":"$t(public.Create) $t(public.User)",
@@ -213,7 +218,7 @@
        "assignmentUpdateDialog":{
           "UpdateDeviceAssignment":"$t(public.Update) $t(public.Device) $t(public.Assignment)",
           "AssignmentDetails":"$t(public.Assignment) $t(public.Details)",
-          "AssetAssociation":"Asset Association"
+          "AssetAssociation":"$t(public.Asset) Association"
        },
        "deviceUpdateDialog":{
           "UpdateDevice":"$t(public.Update) $t(public.Device)"
@@ -370,7 +375,6 @@
           "Assignments":"$t(public.Assignment)s",
           "Zones":"$t(public.Zone)s",
           "DeviceAssignments":"$t(public.Device) $t(public.Assignment)s",
-          "Asset":"Asset",
           "Location":"Location",
           "ReceivedDate":"Received $t(public.Date)",
           "AddNewZone":"$t(public.Add) $t(public.New) $t(public.Zone)",

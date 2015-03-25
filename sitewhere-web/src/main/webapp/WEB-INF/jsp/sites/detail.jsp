@@ -68,7 +68,7 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th data-i18n="sites.detail.Asset"></th>
+					<th data-i18n="public.Asset"></th>
 					<th><font data-i18n="sites.detail.Location"></font> (Lat/Long/Elevation)</th>
 					<th data-i18n="public.EventDate"></th>
 					<th data-i18n="sites.detail.ReceivedDate"></th>
@@ -99,7 +99,7 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th data-i18n="sites.detail.Asset"></th>
+					<th data-i18n="public.Asset"></th>
 					<th data-i18n="public.Measurements"></th>
 					<th data-i18n="public.EventDate"></th>
 					<th data-i18n="sites.detail.ReceivedDate"></th>
@@ -132,7 +132,7 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th data-i18n="sites.detail.Asset"></th>
+					<th data-i18n="public.Asset"></th>
 					<th data-i18n="public.Type"></th>
 					<th data-i18n="public.Message"></th>
 					<th data-i18n="public.Source"></th>

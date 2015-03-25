@@ -22,6 +22,7 @@
                                  this.i18next_sitewhere_title();
                              }
                            };
+                           
    /** Get lng */                 
    var lng = window.navigator.language;
    if(lng != null && lng !=""){
@@ -97,7 +98,9 @@
                      {'key':/Delete Device Group/g,'value':i18next("includes.DeleteDeviceGroup")},
                      {'key':/View Device Group/g,'value':i18next("public.ViewDeviceGroup")},
                      {'key':/Created:/g,'value':i18next("public.Created")+':'},
-                     {'key':/Updated:/g,'value':i18next("public.Updated")+':'}
+                     {'key':/Updated:/g,'value':i18next("public.Updated")+':'},
+                     {'key':/>Device Group</g,'value':'>'+i18next("public.DeviceGroup")+'<'},
+                     {'key':/Roles:/g,'value':i18next("public.Roles")+':'}
 		           ];
             break;
          case "tpl-device-entry":
@@ -109,11 +112,16 @@
                      {'key':/Updated:/g,'value':i18next("public.Updated")+':'},
                      {'key':/Assigned:/g,'value':i18next("public.Assigned")+':'},
                      {'key':/Status:/g,'value':i18next("public.Status")+':'},
+                     {'key':/Spec:/g,'value':i18next("includes.i18next.Spec")+':'},
                      {'key':/Open Assignment/g,'value':i18next("includes.i18next.OpenAssignment")},
                      {'key':/Open Device/g,'value':i18next("includes.i18next.OpenDevice")},
                      {'key':/Release Assignment/g,'value':i18next("includes.ReleaseAssignment")},
                      {'key':/Report Missing/g,'value':i18next("includes.ReportMissing")},
-                     {'key':/Report Device\/Asset Missing/g,'value':i18next("includes.i18next.RDAM")}
+                     {'key':/Report Device\/Asset Missing/g,'value':i18next("includes.i18next.RDAM")},
+                     {'key':/>Active</g,'value':'>'+i18next("includes.Active")+'<'},
+                     {'key':/>Missing</g,'value':'>'+i18next("includes.Missing")+'<'},
+                     {'key':/>Asset</g,'value':'>'+i18next("public.Asset")+'<'},
+                     {'key':/>Device</g,'value':'>'+i18next("public.Device")+'<'}
                    ];
             break;
          case "tpl-assignment-entry":
@@ -129,7 +137,13 @@
                      {'key':/Status:/g,'value':i18next("public.Status")+':'},
                      {'key':/Open Assignment/g,'value':i18next("includes.i18next.OpenAssignment")},
                      {'key':/Open Device/g,'value':i18next("includes.i18next.OpenDevice")},
-                     {'key':/View Assignment/g,'value':i18next("public.ViewAssignment")}
+                     {'key':/View Assignment/g,'value':i18next("public.ViewAssignment")},
+                     {'key':/>Active</g,'value':'>'+i18next("includes.Active")+'<'},
+                     {'key':/>Missing</g,'value':'>'+i18next("includes.Missing")+'<'},
+                     {'key':/>Asset</g,'value':'>'+i18next("public.Asset")+'<'},
+                     {'key':/>Device</g,'value':'>'+i18next("public.Device")+'<'},
+                     {'key':/Roles:/g,'value':i18next("public.Roles")+':'},
+                     {'key':/Email:/g,'value':i18next("public.Email")+':'}
                    ];
             break;
          case "tpl-command-entry":
@@ -166,7 +180,9 @@
                      {'key':/Hardware Id:/g,'value':i18next("public.HardwareId")+':'},
                      {'key':/Asset:/g,'value':i18next("public.Asset")+':'},
                      {'key':/Roles:/g,'value':i18next("public.Roles")+':'},
-                     {'key':/Email:/g,'value':i18next("public.Email")+':'}
+                     {'key':/Email:/g,'value':i18next("public.Email")+':'},
+                     {'key':/>Asset</g,'value':'>'+i18next("public.Asset")+'<'},
+                     {'key':/>Device</g,'value':'>'+i18next("public.Device")+'<'}
                    ];
             break;
          case "tpl-assignment-detail-header":
@@ -188,7 +204,10 @@
                      {'key':/Unique assignment token/g,'value':i18next("includes.i18next.UAT")},
                      {'key':/Release Assignment/g,'value':i18next("includes.ReleaseAssignment")},
                      {'key':/Report Missing/g,'value':i18next("includes.ReportMissing")},
-                     {'key':/Report Device\/Asset Missing/g,'value':i18next("includes.i18next.RDAM")}
+                     {'key':/Report Device\/Asset Missing/g,'value':i18next("includes.i18next.RDAM")},
+                     {'key':/>Active</g,'value':'>'+i18next("includes.Active")+'<'},
+                     {'key':/>Missing</g,'value':'>'+i18next("includes.Missing")+'<'},
+                     {'key':/>Asset</g,'value':'>'+i18next("public.Asset")+'<'}
                    ];
             break;
          case "tpl-batch-command-invocation-entry":
@@ -201,7 +220,8 @@
                      {'key':/Created Date:/g,'value':i18next("public.CreatedDate")+':'},
                      {'key':/Date device was added to the system/g,'value':i18next("includes.i18next.DDWATTS")},
                      {'key':/Updated Date:/g,'value':i18next("public.UpdatedDate")+':'},
-                     {'key':/Date device was last updated/g,'value':i18next("includes.i18next.DDWLU")}
+                     {'key':/Date device was last updated/g,'value':i18next("includes.i18next.DDWLU")},
+                     {'key':/>Device</g,'value':'>'+i18next("public.Device")+'<'}
                    ];
             break;
          case "tpl-alert-entry":

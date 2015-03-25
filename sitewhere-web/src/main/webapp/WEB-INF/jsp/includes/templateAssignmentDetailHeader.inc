@@ -116,9 +116,7 @@
 				<span class="sw-assignment-header-label" title="Assignment status">Assignment Status:</span>
 # if (data.status == 'Active') { #
 			<div class="btn-group" style="margin-top: -6px;">
-				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-					Active
-					<span class="caret"></span>
+				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Active<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
 					<li><a tabindex="-1" href="javascript:void(0)" title="Release Assignment"
@@ -129,9 +127,7 @@
 			</div>
 # } else if (data.status == 'Missing') { #
 			<div class="btn-group" style="margin-top: -6px;">
-				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-					Missing
-					<span class="caret"></span>
+				<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Missing<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
 					<li><a tabindex="-1" href="javascript:void(0)" title="Release Assignment"

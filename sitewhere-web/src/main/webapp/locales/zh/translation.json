@@ -21,7 +21,7 @@
     "Login":"登录",
     "Create":"创建",
     "Created":"$t(public.Create)",
-    "release":"发布",
+    "release":"取消",
     "Release":"$t(public.release)",
     "Released":"$t(public.Release)",
     "Update":"更新",
@@ -54,7 +54,7 @@
     "Elements":"$t(public.Element)",
     "GroupElement":"$t(public.Group)$t(public.Element)",
     "Description":"描述",
-    "assignment":"任务",
+    "assignment":"关联",
     "Assignment":"$t(public.assignment)",
     "Details":"详情",
     "Emulator":"模拟器",
@@ -97,7 +97,7 @@
     "Invoke":"$t(public.Invocation)",
     "Email":"邮箱",
     "New":"新",
-    "Assigned":"任务",
+    "Assigned":"关联",
     "parameter":"参数",
     "Parameter":"$t(public.parameter)",
     "character":"字符",
@@ -124,6 +124,7 @@
        "Center":"中心",
        "Zoom":"缩放",
        "Comments":"建议",
+       "Missing":"丢失",
        "DeviceDetails":"$t(public.device)$t(public.Details)",
        "CommandDetails":"$t(public.Command)$t(public.Details)",
        "CreateDevice":"$t(public.Create)$t(public.device)",
@@ -131,12 +132,15 @@
        "EditUser":"$t(public.Edit)$t(public.User)",
        "DeleteDeviceGroup":"$t(public.Delete)$t(public.DeviceGroup)",
        "ReleaseAssignment":"$t(public.Release)$t(public.Assignment)",
-       "ReportMissing":"宣布丢失",
+       "ReportMissing":"报告$t(includes.Missing)",
        "RelativePath":"相对路径",
        "Namespace":"名称空间",
        "EditZone":"$t(public.Edit) $t(public.Zone)",
        "DeleteZone":"$t(public.Delete)$t(public.Zone)",
        "DeleteCommand":"$t(public.Delete)$t(public.Command)",
+       "Active":"活跃",
+       "Expired":"到期",
+       "Locked":"冻结",
        "top":{
           "LogOut":"退出"
        },
@@ -153,7 +157,7 @@
           "ApplyFilter":"申请过滤"
        },
        "assignmentCreateDialog":{
-          "Assign":"任务"
+          "Assign":"关联"
        },
        "zoneCreateDialog":{
           "ZoneSettings":"$t(public.Zone)$t(public.Settings)",
@@ -175,27 +179,28 @@
           "CommandInvocationDetails":"$t(public.Command)$t(public.Invocation)$t(public.Details)"
        },
        "i18next":{
-          "RDAM":"宣布$t(public.device)/资产丢失",
+          "RDAM":"报告$t(public.device)/$t(public.Asset)$t(includes.Missing)",
           "EditCommand":"$t(public.Edit)$t(public.Command)",
           "DeleteGroupElement":"$t(public.Delete)$t(public.Group)$t(public.Element)",
           "DDWATTS":"设备加入该系统日期",
-          "DAWC":"任务创建日期",
+          "DAWC":"关联创建日期",
           "AssignedHardware":"$t(public.Assigned)硬件",
           "Assignedhardware":"$t(public.Assigned)硬件",
           "AssignedDevice":"$t(public.Assigned)$t(public.device)",
-          "DUBA":"用于任务设备",
+          "DUBA":"用于关联设备",
           "DDWLU":"设备最后更新日期",
-          "DAWLU":"任务最后更新日期",
-          "ActiveDate":"活跃$t(public.Date)",
-          "DABA":"任务开始活跃日期",
-          "ReleasedDate":"发布$t(public.Date)",
-          "DAWR":"任务发布日期",
+          "DAWLU":"关联最后更新日期",
+          "ActiveDate":"$t(includes.Active)$t(public.Date)",
+          "DABA":"关联开始活跃日期",
+          "ReleasedDate":"取消$t(public.Date)",
+          "DAWR":"关联取消日期",
           "AssignmentStatus":"$t(public.Assignment)$t(public.Status)",
           "Assignmentstatus":"$t(public.Assignment)$t(public.status)",
           "OpenAssignment":"$t(public.Open)$t(public.Assignment)",
           "OpenDevice":"$t(public.Open)$t(public.Device)",
-          "UAT":"任务唯一的token",
-          "EditZone":"$t(public.Edit)$t(public.Zone)"
+          "UAT":"关联唯一的token",
+          "EditZone":"$t(public.Edit)$t(public.Zone)",
+          "Spec":"说明"
        },
        "userCreateDialog":{
           "CreateUser":"$t(public.Create)$t(public.User)",
@@ -214,7 +219,7 @@
        "assignmentUpdateDialog":{
           "UpdateDeviceAssignment":"$t(public.Update)$t(public.Device)$t(public.Assignment)",
           "AssignmentDetails":"$t(public.Assignment)$t(public.Details)",
-          "AssetAssociation":"资产联合"
+          "AssetAssociation":"$t(public.Asset)联合"
        },
        "deviceUpdateDialog":{
           "UpdateDevice":"$t(public.Update)$t(public.Device)"
@@ -253,9 +258,9 @@
           "RA":"$t(public.Release)$t(public.assignment)",
           "AYSYWTRTDA":"$t(public.msg.areyousure)$t(public.release)$t(public.this)$t(public.device)$t(public.assignment)?",
           "UTRA":"$t(public.Unable)$t(public.release)$t(public.assignment)",
-          "AYSYWTRTAM":"$t(public.msg.areyousure)宣布$t(public.this)$t(public.assignment)丢失吗?",
+          "AYSYWTRTAM":"$t(public.msg.areyousure)报告$t(public.this)$t(public.assignment)$t(includes.Missing)吗?",
           "AYSYWTDDGWT":"$t(public.msg.areyousure)$t(public.msg.delete)$t(public.device)$t(public.group)关于token",
-          "UTMAAM":"$t(public.Unable)标注$t(public.assignment)丢失",
+          "UTMAAM":"$t(public.Unable)标注$t(public.assignment)$t(includes.Missing)",
           "UTDZ":"$t(public.Unable)$t(public.msg.delete)区",
           "AYSYWTDTZ":"$t(public.msg.areyousure)$t(public.msg.delete)$t(public.this)区吗?",
           "UTDDG":"$t(public.Unable)$t(public.msg.delete)$t(public.device)$t(public.group)"
@@ -336,7 +341,7 @@
         "title":"$t(public.View)$t(public.Device)",
         "AssignmentHistory":"历史$t(public.Assignment)",
         "DeviceAssignmentHistory":"$t(public.Device)$t(public.Assignment)的历史记录",
-        "AssignDevice":"$t(public.Device)任务"
+        "AssignDevice":"$t(public.Device)关联"
      },
      "list":{
         "title":"$t(public.Manage)$t(public.Devices)",
@@ -371,7 +376,6 @@
           "Assignments":"$t(public.Assignment)",
           "Zones":"$t(public.Zone)",
           "DeviceAssignments":"$t(public.Device)$t(public.Assignment)",
-          "Asset":"资产",
           "Location":"位置",
           "ReceivedDate":"接收$t(public.Date)",
           "AddNewZone":"$t(public.Add)$t(public.New)$t(public.Zone)",

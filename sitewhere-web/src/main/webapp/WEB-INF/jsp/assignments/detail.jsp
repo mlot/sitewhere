@@ -172,7 +172,7 @@
 
 <script>
     /** Set sitewhere_title */
-    sitewhere_i18next.sitewhere_title = "ssignments.detail.title";
+    sitewhere_i18next.sitewhere_title = "assignments.detail.title";
     
 	/** Assignment token */
 	var token = '<c:out value="${assignment.token}"/>';

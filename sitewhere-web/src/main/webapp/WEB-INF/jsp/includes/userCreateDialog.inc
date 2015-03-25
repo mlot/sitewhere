@@ -85,11 +85,14 @@
 	var ucStatusList;
 	
 	/** Available map types shown in dropdown */
-    var ucAccountStatuses = [
-		{ text: "Active", status: "Active" },
-		{ text: "Expired", status: "Expired" },
-		{ text: "Locked", status: "Locked" },
-	];
+	function getUcAccountStatuses(){
+	    var ucAccountStatuses = [
+		    { text: i18next("includes.Active"), status: "Active" },
+		    { text: i18next("includes.Expired"), status: "Expired" },
+		    { text: i18next("includes.Locked"), status: "Locked" },
+	    ];
+	    return ucAccountStatuses;
+	}
 
 	$(document).ready(function() {
 		
@@ -102,8 +105,8 @@
     	ucStatusList = $("#uc-account-status").kendoDropDownList({
     		dataTextField: "text",
     		dataValueField: "status",
-    	    dataSource: ucAccountStatuses,
-    	}).data("kendoDropDownList");;
+    	    dataSource: getUcAccountStatuses(),
+    	}).data("kendoDropDownList");
     	
 		/** Create AJAX datasource for authorities list */
 		authsDS = new kendo.data.DataSource({
