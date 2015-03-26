@@ -121,6 +121,7 @@
     }
   },
   "includes":{
+       "Desc":"$t(public.Description)",
        "Center":"中心",
        "Zoom":"缩放",
        "Comments":"建议",

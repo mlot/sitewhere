@@ -80,7 +80,9 @@
 		             {'key':/Delete Specification/g,'value':i18next("public.DeleteSpecification")},
 		             {'key':/View Specification/g,'value':i18next("public.ViewSpecification")},
 		             {'key':/Created:/g,'value':i18next("public.Created")+':'},
-		             {'key':/Updated:/g,'value':i18next("public.Updated")+':'}
+		             {'key':/Asset:/g,'value':i18next("public.Asset")+':'},
+		             {'key':/Updated:/g,'value':i18next("public.Updated")+':'},
+		             {'key':/Desc:/g,'value':i18next("includes.Desc")+':'}
 		           ];
 		    break;
 		 case "tpl-site-entry":
@@ -100,7 +102,8 @@
                      {'key':/Created:/g,'value':i18next("public.Created")+':'},
                      {'key':/Updated:/g,'value':i18next("public.Updated")+':'},
                      {'key':/>Device Group</g,'value':'>'+i18next("public.DeviceGroup")+'<'},
-                     {'key':/Roles:/g,'value':i18next("public.Roles")+':'}
+                     {'key':/Roles:/g,'value':i18next("public.Roles")+':'},
+                     {'key':/Desc:/g,'value':i18next("includes.Desc")+':'}
 		           ];
             break;
          case "tpl-device-entry":
