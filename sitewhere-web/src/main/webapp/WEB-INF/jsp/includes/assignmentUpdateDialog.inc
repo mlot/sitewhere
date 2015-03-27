@@ -64,27 +64,27 @@
 	<div style="min-height: 120px;">
 		<div class="sw-assignment-update-imgwrapper">
 			<img class="sw-assignment-update-img" src="#:associatedHardware.imageUrl#"/>
-			<span class="label label-info sw-assignment-list-entry-logo-tag">Asset</span>
+			<span class="label label-info sw-assignment-list-entry-logo-tag">#= i18next("public.Asset") #</span>
 		</div>
 		<div style="display: inline-block; max-width: 280px;">
-			<p class="ellipsis"><span class="sw-assignment-update-label">Asset:</span> #:associatedHardware.name#</p>
+			<p class="ellipsis"><span class="sw-assignment-update-label">#= i18next("public.Asset") #:</span> #:associatedHardware.name#</p>
 			<p class="ellipsis"><span class="sw-assignment-update-label">SKU:</span> #:associatedHardware.sku#</p>
 			<p class="ellipsis"><span class="sw-assignment-update-label">Info:</span> #:associatedHardware.description#</p>
 # } else if (data.associatedPerson) { #
 	<div style="min-height: 120px;">
 		<div class="sw-assignment-update-imgwrapper">
 			<img class="sw-assignment-update-img" src="#:associatedPerson.imageUrl#"/>
-			<span class="label label-info sw-assignment-list-entry-logo-tag">Asset</span>
+			<span class="label label-info sw-assignment-list-entry-logo-tag">#= i18next("public.Asset") #</span>
 		</div>
 		<div style="display: inline-block; max-width: 280px;">
-			<p class="ellipsis"><span class="sw-assignment-update-label">Asset:</span> #:associatedPerson.name#</p>
-			<p class="ellipsis"><span class="sw-assignment-update-label">Email:</span> #:associatedPerson.emailAddress#</p>
-			<p class="ellipsis"><span class="sw-assignment-update-label">Roles:</span> #:swArrayAsCommaDelimited(associatedPerson.roles)#</p>
+			<p class="ellipsis"><span class="sw-assignment-update-label">#= i18next("public.Asset") #:</span> #:associatedPerson.name#</p>
+			<p class="ellipsis"><span class="sw-assignment-update-label">#= i18next("public.Email") #:</span> #:associatedPerson.emailAddress#</p>
+			<p class="ellipsis"><span class="sw-assignment-update-label">#= i18next("public.Roles") #:</span> #:swArrayAsCommaDelimited(associatedPerson.roles)#</p>
 # } else if (data.associatedLocation) { #
 	<div style="min-height: 120px;">
 		<div class="sw-assignment-update-imgwrapper">
 			<img class="sw-assignment-update-img" src="#:associatedLocation.imageUrl#"/>
-			<span class="label label-info sw-assignment-list-entry-logo-tag">Asset</span>
+			<span class="label label-info sw-assignment-list-entry-logo-tag">#= i18next("public.Asset") #</span>
 		</div>
 		<div style="display: inline-block; max-width: 280px;">
 			<p class="ellipsis"><span class="sw-assignment-update-label">Latitude:</span> #:associatedLocation.latitude#</p>
@@ -99,18 +99,18 @@
 		<div style="display: inline-block;" max-width: 280px;>
 			<p class="ellipsis"><span class="sw-assignment-update-label">Type:</span> Unassociated Device</p>
 # } #
-			<p class="ellipsis"><span class="sw-assignment-update-label">Assigned:</span> #= formattedDate(kendo.parseDate(activeDate)) #</p>
-			<p class="ellipsis"><span class="sw-assignment-update-label">Released:</span> #= formattedDate(kendo.parseDate(releasedDate)) #</p>
-			<p class="ellipsis"><span class="sw-assignment-update-label">Status:</span> #:status#</p>
+			<p class="ellipsis"><span class="sw-assignment-update-label">#= i18next("public.Assigned") #:</span> #= formattedDate(kendo.parseDate(activeDate)) #</p>
+			<p class="ellipsis"><span class="sw-assignment-update-label">#= i18next("public.Released") #:</span> #= formattedDate(kendo.parseDate(releasedDate)) #</p>
+			<p class="ellipsis"><span class="sw-assignment-update-label">#= i18next("public.Status") #:</span> #:status#</p>
 		</div>
 	</div>
 	<div style="min-height: 120px; clear: both; border-top: 1px solid \\#eeeeee; padding-top: 15px;">
 		<div class="sw-assignment-update-imgwrapper">
 			<img class="sw-assignment-update-img" src="#:device.assetImageUrl#"/>
-			<span class="label label-info sw-assignment-list-entry-logo-tag">Device</span>
+			<span class="label label-info sw-assignment-list-entry-logo-tag">#= i18next("public.Device") #</span>
 		</div>
-		<p class="ellipsis"><span class="sw-assignment-update-label">Device:</span> #:device.assetName#</p>
-		<p class="ellipsis"><span class="sw-assignment-update-label">Hardware Id:</span> #:device.hardwareId#</p>
+		<p class="ellipsis"><span class="sw-assignment-update-label">#= i18next("public.Device") #:</span> #:device.assetName#</p>
+		<p class="ellipsis"><span class="sw-assignment-update-label">#= i18next("public.HardwareId") #:</span> #:device.hardwareId#</p>
 	</div>
 </script>
 
@@ -182,7 +182,7 @@
     
     /** Called on successful assignment load request */
     function auUpdateGetSuccess(data, status, jqXHR) {
-		var template = kendo.template(kendoI18next("au-static-block"));
+		var template = kendo.template($("#au-static-block").html());
 		$('#au-static-header').html(template(data));
 		$('#au-token').val(data.token);
 		auMetadataDS.data(swLookupAsMetadata(data.metadata));

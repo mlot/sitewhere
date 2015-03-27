@@ -83,10 +83,10 @@
 	<div class="sw-device-update-imgwrapper">
 		<img class="sw-device-update-img" src="#:specification.asset.imageUrl#"/>
 	</div>
-	<p class="ellipsis"><span class="sw-device-update-label">Hardware Id:</span> #:hardwareId#</p>
-	<p class="ellipsis"><span class="sw-device-update-label">Specification:</span> #:specification.name#</p>
-	<p class="ellipsis"><span class="sw-device-update-label">Created:</span> #= formattedDate(kendo.parseDate(createdDate)) #</p>
-	<p class="ellipsis"><span class="sw-device-update-label">Updated:</span> #= formattedDate(kendo.parseDate(updatedDate)) #</p>
+	<p class="ellipsis"><span class="sw-device-update-label">#= i18next("public.HardwareId") #:</span> #:hardwareId#</p>
+	<p class="ellipsis"><span class="sw-device-update-label">#= i18next("public.Specification") #:</span> #:specification.name#</p>
+	<p class="ellipsis"><span class="sw-device-update-label">#= i18next("public.Created") #:</span> #= formattedDate(kendo.parseDate(createdDate)) #</p>
+	<p class="ellipsis"><span class="sw-device-update-label">#= i18next("public.Updated") #:</span> #= formattedDate(kendo.parseDate(updatedDate)) #</p>
 </script>
 
 <script>
@@ -188,7 +188,7 @@
 	function duUpdateGetSuccess(data, status, jqXHR) {
 		$('#du-general-form')[0].reset();
 
-		var template = kendo.template(kendoI18next("du-static-block"));
+		var template = kendo.template($("#du-static-block").html());
 		$('#du-static-header').html(template(data));
 		$('#du-hardware-id').val(data.hardwareId);
 		$('#du-specification-token').val(data.specification.token);

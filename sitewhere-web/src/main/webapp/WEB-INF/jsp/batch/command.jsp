@@ -145,7 +145,7 @@
 
 	/** Called on successful batch operation load request */
 	function loadGetSuccess(data, status, jqXHR) {
-		var template = kendo.template(kendoI18next("tpl-batch-command-invocation-entry"));
+		var template = kendo.template($("#tpl-batch-command-invocation-entry").html());
 		parseBatchOperationData(data);
 		data.command = command;
 		data.commandHtml = swHtmlifyCommandWithValues(command, data.metadata);

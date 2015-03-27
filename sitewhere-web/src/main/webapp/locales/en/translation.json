@@ -115,6 +115,10 @@
     "ViewDevice":"$t(public.View) $t(public.Device)",
     "ViewAssignment":"$t(public.View) $t(public.Assignment)",
     "DeleteUser":"$t(public.Delete) $t(public.User)",
+    "Operation":"Operation",
+    "Processing":"Processing",
+    "ProcessingStarted":"$t(public.Processing) Started",
+    "ProcessingFinished":"$t(public.Processing) Finished",
     "msg":{
        "areyousure":"Are you sure you want to",
        "delete":"delete"
@@ -142,8 +146,12 @@
        "Active":"Active",
        "Expired":"Expired",
        "Locked":"Locked",
+       "DeleteRole":"$t(public.Delete) $t(public.Role)",
        "top":{
           "LogOut":"Log Out"
+       },
+       "templateBatchCommandInvocationEntry":{
+          "ProcessingStatus":"$t(batch.list.Processing) $t(public.Status)"
        },
        "specificationCreateDialog":{
           "AssetProvider":"$t(public.Asset) Provider"
@@ -227,7 +235,8 @@
        "metadata":{
           "Nameisrequired":"$t(public.Name) is $t(public.required).",
           "ICIN":"$t(public.Invalid) $t(public.character) in $t(public.name).",
-          "NIABU":"$t(public.Name) is already being used"
+          "NIABU":"$t(public.Name) is already being used",
+          "DeleteMetadata":"$t(public.Delete) $t(public.Metadata)"
        },
        "deviceCreateDialog":{
           "UTCD":"$t(public.Unable) to create device."
@@ -295,11 +304,7 @@
        },
        "list":{
           "title":"$t(public.Manage) $t(public.Batch) Operations",
-          "Processing":"Processing",
-          "Operation":"Operation",
-          "OperationCreated":"$t(batch.list.Operation) $t(public.Created)",
-          "ProcessingStarted":"$t(batch.list.Processing) Started",
-          "ProcessingFinished":"$t(batch.list.Processing) Finished"
+          "OperationCreated":"$t(batch.list.Operation) $t(public.Created)"
        }
   },
   "assignments":{

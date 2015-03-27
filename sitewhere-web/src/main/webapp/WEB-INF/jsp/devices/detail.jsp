@@ -177,7 +177,7 @@
 		/** Create the assignments list */
 		$("#assignments").kendoListView({
 			dataSource : assignmentsDS,
-			template : kendo.template(kendoI18next("tpl-assignment-entry"))
+			template : kendo.template($("#tpl-assignment-entry").html())
 		});
 		
 	    $("#assignments-pager").kendoPager({
@@ -212,7 +212,7 @@
     
     /** Called on successful device load request */
     function loadGetSuccess(data, status, jqXHR) {
-		var template = kendo.template(kendoI18next("tpl-device-detail-header"));
+		var template = kendo.template($("#tpl-device-detail-header").html());
 		parseDeviceData(data);
 		data.inDetailView = true;
 		$('#device-details').html(template(data));

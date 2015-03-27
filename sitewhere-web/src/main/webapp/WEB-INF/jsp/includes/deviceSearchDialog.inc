@@ -68,7 +68,7 @@
 		dvsMatches = $("#dvs-device-matches").kendoListView({
 			dataSource : dvsMatchesDS,
 			selectable : "single",
-			template : kendo.template(kendoI18next("tpl-device-entry")),
+			template : kendo.template($("#tpl-device-entry").html()),
 			change: dvsDeviceChosen
 		}).data("kendoListView");
 		

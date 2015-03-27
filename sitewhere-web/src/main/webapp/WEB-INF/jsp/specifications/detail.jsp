@@ -160,7 +160,7 @@
     
     /** Called on successful specification load request */
     function loadGetSuccess(data, status, jqXHR) {
-		var template = kendo.template(kendoI18next("tpl-specification-entry"));
+		var template = kendo.template($("#tpl-specification-entry").html());
 		parseSpecificationData(data);
 		data.inDetailView = true;
 		$('#specification-details').html(template(data));
@@ -204,7 +204,7 @@
     
     /** Called on successful specification commands load request */
     function loadCommandsSuccess(data, status, jqXHR) {
-		var template = kendo.template(kendoI18next("tpl-command-entry"));
+		var template = kendo.template($("#tpl-command-entry").html());
 		var commandData;
 		
     	var index;

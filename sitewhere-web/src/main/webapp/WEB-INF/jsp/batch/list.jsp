@@ -29,11 +29,11 @@
 	</colgroup>
 	<thead>
 		<tr>
-			<th data-i18n="batch.list.Operation"></th>
+			<th data-i18n="public.Operation"></th>
 			<th data-i18n="batch.ProcessingStatus"></th>
 			<th data-i18n="batch.list.OperationCreated"></th>
-			<th data-i18n="batch.list.ProcessingStarted"></th>
-			<th data-i18n="batch.list.ProcessingFinished"></th>
+			<th data-i18n="public.ProcessingStarted"></th>
+			<th data-i18n="public.ProcessingFinished"></th>
 			<th></th>
 		</tr>
 	</thead>

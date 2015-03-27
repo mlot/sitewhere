@@ -104,7 +104,7 @@
 		/** Create the list of specifications */
 		$("#specifications").kendoListView({
 			dataSource : specsDS,
-			template : kendo.template(kendoI18next("tpl-specification-entry")),
+			template : kendo.template($("#tpl-specification-entry").html()),
 			change: function(e){
                        alert("ok");
                     }

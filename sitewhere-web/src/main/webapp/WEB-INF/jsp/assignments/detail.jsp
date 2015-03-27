@@ -265,7 +265,7 @@
 		/** Create the location list */
         $("#locations").kendoGrid({
 			dataSource : locationsDS,
-            rowTemplate: kendo.template(kendoI18next("tpl-location-entry")),
+            rowTemplate: kendo.template($("#tpl-location-entry").html()),
             scrollable: true,
             height: gridHeight,
         });
@@ -300,7 +300,7 @@
 		/** Create the measurements list */
         $("#measurements").kendoGrid({
 			dataSource : measurementsDS,
-            rowTemplate: kendo.template(kendoI18next("tpl-measurements-entry")),
+            rowTemplate: kendo.template($("#tpl-measurements-entry").html()),
             scrollable: true,
             height: gridHeight,
         });
@@ -335,7 +335,7 @@
 		/** Create the alerts list */
         $("#alerts").kendoGrid({
 			dataSource : alertsDS,
-            rowTemplate: kendo.template(kendoI18next("tpl-alert-entry")),
+            rowTemplate: kendo.template($("#tpl-alert-entry").html()),
             scrollable: true,
             height: gridHeight,
         });
@@ -370,7 +370,7 @@
 		/** Create the invocations list */
         $("#invocations").kendoGrid({
 			dataSource : invocationsDS,
-            rowTemplate: kendo.template(kendoI18next("tpl-invocation-entry")),
+            rowTemplate: kendo.template($("#tpl-invocation-entry").html()),
             scrollable: true,
             height: gridHeight,
         });
@@ -429,7 +429,7 @@
     
     /** Called on successful assignment load request */
     function loadGetSuccess(data, status, jqXHR) {
-		var template = kendo.template(kendoI18next("tpl-assignment-detail-header"));
+		var template = kendo.template($("#tpl-assignment-detail-header").html());
 		parseAssignmentData(data);
 		data.inDetailView = true;
 		$('#assignment-details').html(template(data));

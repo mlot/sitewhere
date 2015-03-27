@@ -102,7 +102,7 @@
 		/** Create the list of devices */
 		$("#groups").kendoListView({
 			dataSource : deviceGroupsDS,
-			template : kendo.template(kendoI18next("tpl-device-group-entry")),
+			template : kendo.template($("#tpl-device-group-entry").html()),
 		});
 		
 		/** Pager for device list */

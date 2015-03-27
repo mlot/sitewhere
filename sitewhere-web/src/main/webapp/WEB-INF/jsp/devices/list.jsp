@@ -314,7 +314,7 @@
 		/** Create the list of devices */
 		$("#devices").kendoListView({
 			dataSource : devicesDS,
-			template : kendo.template(kendoI18next("tpl-device-entry")),
+			template : kendo.template($("#tpl-device-entry").html()),
 		});
 
 		/** Pager for device list */

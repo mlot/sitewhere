@@ -66,7 +66,7 @@
 		<td>
 <% if (request.getParameter("mdReadOnly") == null) { %>
 			<div style="text-align: right;">
-				<i class="icon-remove sw-action-glyph sw-delete-glyph" title="Delete Metadata"
+				<i class="icon-remove sw-action-glyph sw-delete-glyph" title="#= i18next("includes.metadata.DeleteMetadata") #"
 					onclick="onDeleteMetadata_<%= request.getParameter("uid")%>('#:name#')"></i>
 			</div>
 <% } %>

@@ -121,7 +121,7 @@
 		/** Create the site list */
 		$("#sites").kendoListView({
 			dataSource : sitesDS,
-			template : kendo.template(kendoI18next("tpl-site-entry"))
+			template : kendo.template($("#tpl-site-entry").html())
 		});
 		
         $("#pager").kendoPager({

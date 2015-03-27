@@ -122,7 +122,7 @@
 		/** Create the location list */
         $("#users").kendoGrid({
 			dataSource : usersDS,
-            rowTemplate: kendo.template(kendoI18next("tpl-user-entry")),
+            rowTemplate: kendo.template($("#tpl-user-entry").html()),
             scrollable: false,
         });
 		

@@ -101,7 +101,7 @@
 		/** Create the elements grid */
         $("#elements").kendoGrid({
 			dataSource : elementsDS,
-            rowTemplate: kendo.template(kendoI18next("tpl-device-group-element-entry")),
+            rowTemplate: kendo.template($("#tpl-device-group-element-entry").html()),
             scrollable: true,
             height: 400,
         });
@@ -158,7 +158,7 @@
     
     /** Called on successful device group load request */
     function loadGetSuccess(data, status, jqXHR) {
-		var template = kendo.template(kendoI18next("tpl-device-group-entry"));
+		var template = kendo.template($("#tpl-device-group-entry").html());
     	parseDeviceGroupData(data);
 		data.inDetailView = true;
 		$('#device-group-details').html(template(data));

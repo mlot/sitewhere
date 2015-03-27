@@ -788,7 +788,7 @@
     
     /** Called on successful assignment load request */
     function loadGetSuccess(data, status, jqXHR) {
-		var template = kendo.template(kendoI18next("tpl-assignment-entry"));
+		var template = kendo.template($("#tpl-assignment-entry").html());
 		parseAssignmentData(data);
 		data.inDetailView = true;
 		$('#assignment-details').html(template(data));
